@@ -10,3 +10,5 @@ server:
   servlet:
     context-path: /cardopen
   port: 8001
+mybatis:
+  mapper-locations: classpath:/mybatis/*.xml
