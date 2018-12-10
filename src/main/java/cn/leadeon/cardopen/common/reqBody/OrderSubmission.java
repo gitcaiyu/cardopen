@@ -19,6 +19,11 @@ public class OrderSubmission {
     private String phone;
 
     /**
+     * 渠道编码
+     */
+    private String code;
+
+    /**
      * 渠道地址
      */
     private String address;

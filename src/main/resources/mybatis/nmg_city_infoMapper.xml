@@ -67,4 +67,9 @@
       </if>
     </trim>
   </insert>
+
+  <select id="cityInfo" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select city_id,city_name,city_code,create_time,create_people,update_time,update_people from nmg_city_info where city_code = #{city,jdbcType=VARCHAR}
+  </select>
+
 </mapper>

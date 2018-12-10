@@ -44,7 +44,8 @@ public class nmg_order_infoService {
             map.put("discount",nmg_discount_infoMapper.applyCardDisc());
             result.add(map);
             map = new HashMap();
-            map.put("channelName",nmg_channel_infoMapper.myChannelInfo(phone));
+            map.put("chargeTel",phone);
+            map.put("channelName",nmg_channel_infoMapper.myChannelInfo(map));
             result.add(map);
             cardResponse.setResBody(result);
             cardResponse.setResCode(CodeEnum.success.getCode());
@@ -65,7 +66,7 @@ public class nmg_order_infoService {
                 for (int i = 0; i < order.size(); i++) {
                     nmg_order_info nmg_order_info = (cn.leadeon.cardopen.entity.nmg_order_info) order.get(i);
                     if (nmg_order_info.getOrderId() == null) {
-                        nmg_order_info.setOrderId(RandomUtil.uuid);
+                        nmg_order_info.setOrderId(RandomUtil.orderid(orderSubmission.getCode()));
                         nmg_order_info.setOrderPeople(orderSubmission.getName());
                         nmg_order_info.setSubTime(DateUtil.getDateString());
                         nmg_order_info.setCreateTime(DateUtil.getDateString());
@@ -76,8 +77,6 @@ public class nmg_order_infoService {
                         nmg_order_infoMapper.updateOrderInfo(nmg_order_info);
                     }
                 }
-                cardResponse.setResCode(CodeEnum.success.getCode());
-                cardResponse.setResDesc(CodeEnum.success.getDesc());
             } catch (Exception e) {
                 cardResponse.setResCode(CodeEnum.failed.getCode());
                 cardResponse.setResDesc(CodeEnum.failed.getDesc());
@@ -93,8 +92,6 @@ public class nmg_order_infoService {
     public CardResponse detail(String phone) {
         CardResponse cardResponse = new CardResponse();
         if (phone != null) {
-            cardResponse.setResCode(CodeEnum.success.getCode());
-            cardResponse.setResDesc(CodeEnum.success.getDesc());
             cardResponse.setResBody(nmg_order_infoMapper.detail(phone));
         } else {
             cardResponse.setResCode(CodeEnum.nullValue.getCode());

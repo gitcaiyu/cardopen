@@ -12,6 +12,8 @@ public class nmg_user_info {
 
     private String userRole;
 
+    private String userType;
+
     private String userTel;
 
     private String cityCode;

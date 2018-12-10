@@ -6,6 +6,7 @@
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="user_pass" property="userPass" jdbcType="VARCHAR" />
     <result column="user_role" property="userRole" jdbcType="VARCHAR" />
+    <result column="user_type" property="userType" jdbcType="VARCHAR" />
     <result column="user_tel" property="userTel" jdbcType="VARCHAR" />
     <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
     <result column="flag" property="flag" jdbcType="VARCHAR" />
@@ -14,13 +15,13 @@
   </resultMap>
   <insert id="insert" parameterType="cn.leadeon.cardopen.entity.nmg_user_info" >
     insert into nmg_user_info (user_id, user_name, user_pass, 
-      user_role, user_tel, city_code, 
-      flag, create_time, update_time
-      )
+      user_role, user_type, user_tel, 
+      city_code, flag, create_time, 
+      update_time)
     values (#{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{userPass,jdbcType=VARCHAR}, 
-      #{userRole,jdbcType=VARCHAR}, #{userTel,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, 
-      #{flag,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}
-      )
+      #{userRole,jdbcType=VARCHAR}, #{userType,jdbcType=VARCHAR}, #{userTel,jdbcType=VARCHAR}, 
+      #{cityCode,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.leadeon.cardopen.entity.nmg_user_info" >
     insert into nmg_user_info
@@ -36,6 +37,9 @@
       </if>
       <if test="userRole != null" >
         user_role,
+      </if>
+      <if test="userType != null" >
+        user_type,
       </if>
       <if test="userTel != null" >
         user_tel,
@@ -66,6 +70,9 @@
       <if test="userRole != null" >
         #{userRole,jdbcType=VARCHAR},
       </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=VARCHAR},
+      </if>
       <if test="userTel != null" >
         #{userTel,jdbcType=VARCHAR},
       </if>
@@ -83,4 +90,9 @@
       </if>
     </trim>
   </insert>
+
+  <select id="getUserInfoByPhone" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select user_id,user_name,user_pass,user_role,user_type,user_tel,city_code,flag,create_time,update_time from nmg_user_info where user_tel = #{phone,jdbcType=VARCHAR} and flag = 'Y'
+  </select>
+
 </mapper>

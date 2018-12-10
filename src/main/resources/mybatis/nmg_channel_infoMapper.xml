@@ -10,14 +10,15 @@
     <result column="charge_name" property="chargeName" jdbcType="VARCHAR" />
     <result column="charge_tel" property="chargeTel" jdbcType="VARCHAR" />
     <result column="channel_address" property="channelAddress" jdbcType="VARCHAR" />
+      <result column="channel_code" property="channelCode" jdbcType="VARCHAR" />
   </resultMap>
   <insert id="insert" parameterType="cn.leadeon.cardopen.entity.nmg_channel_info" >
     insert into nmg_channel_info (channel_id, channel_name, channel_type, 
       city, county, charge_name, 
-      charge_tel, channel_address)
+      charge_tel, channel_address,channel_code)
     values (#{channelId,jdbcType=VARCHAR}, #{channelName,jdbcType=VARCHAR}, #{channelType,jdbcType=VARCHAR}, 
       #{city,jdbcType=VARCHAR}, #{county,jdbcType=VARCHAR}, #{chargeName,jdbcType=VARCHAR}, 
-      #{chargeTel,jdbcType=VARCHAR}, #{channelAddress,jdbcType=VARCHAR})
+      #{chargeTel,jdbcType=VARCHAR}, #{channelAddress,jdbcType=VARCHAR},#{channelCode,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.leadeon.cardopen.entity.nmg_channel_info" >
     insert into nmg_channel_info
@@ -46,6 +47,9 @@
       <if test="channelAddress != null" >
         channel_address,
       </if>
+      <if test="channelCode != null">
+          channel_code,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="channelId != null" >
@@ -72,11 +76,27 @@
       <if test="channelAddress != null" >
         #{channelAddress,jdbcType=VARCHAR},
       </if>
+        <if test="channelCode != null">
+            #{channelCode,jdbcType=VARCHAR},
+        </if>
     </trim>
   </insert>
 
-  <select id="myChannelInfo" parameterType="java.lang.String" resultType="java.util.Map">
-    select channel_id,channel_name,channel_type,city,county,charge_name,charge_tel,channel_address from nmg_channel_info where charge_tel = #{chargeTel,jdbcType=VARCHAR}
+  <select id="myChannelInfo" parameterType="java.util.Map" resultType="java.util.Map">
+    select
+      channel_id,channel_name,channel_type,city,county,charge_name,charge_tel,channel_address,channelCode
+    from nmg_channel_info
+    where 1 = 1
+    <if test="chargeTel != null">
+      and charge_tel = #{chargeTel,jdbcType=VARCHAR}
+    </if>
+    <if test="city != null">
+      and city = #{city,jdbcType=VARCHAR}
+    </if>
   </select>
+
+  <delete id="channelDel" parameterType="java.lang.String">
+    delete from nmg_channel_info where channel_id = #{channelId,jdbcType=VARCHAR}
+  </delete>
 
 </mapper>

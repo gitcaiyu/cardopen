@@ -33,6 +33,17 @@ public class DateUtil {
     }
 
     /**
+     * 获取时间字符串
+     *
+     * @return yyyyMMddhhmmss
+     */
+    public static String YYYYMMDD() {
+        simpleDateFormat.get().applyPattern("yyyyMMdd");
+        String str = simpleDateFormat.get().format(new Date());
+        return str;
+    }
+
+    /**
      *
      * 将日期转换成格式为yyyy-MM-dd hh:mm:ss的日期字符串
      *

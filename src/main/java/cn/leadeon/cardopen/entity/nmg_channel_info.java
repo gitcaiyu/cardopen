@@ -19,4 +19,6 @@ public class nmg_channel_info {
     private String chargeTel;
 
     private String channelAddress;
+
+    private String channelCode;
 }
