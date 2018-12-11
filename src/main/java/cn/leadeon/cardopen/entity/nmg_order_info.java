@@ -6,6 +6,8 @@ import lombok.Data;
 public class nmg_order_info {
     private String orderId;
 
+    private String batchId;
+
     private String city;
 
     private String county;

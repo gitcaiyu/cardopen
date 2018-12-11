@@ -13,4 +13,10 @@ public interface nmg_order_infoMapper {
     List<Map<String,Object>> detail(String phone);
 
     int updateOrderInfo(nmg_order_info record);
+
+    int orderInfoDel(String batchId);
+
+    int orderStateUpdate(Map param);
+
+    List<Map<String,Object>> exportOrder(String phone);
 }

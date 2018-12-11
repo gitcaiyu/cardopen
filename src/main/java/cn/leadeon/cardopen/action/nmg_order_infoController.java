@@ -47,4 +47,39 @@ public class nmg_order_infoController {
         return nmg_order_infoService.detail(phone);
     }
 
+
+    /**
+     * 订单明细删除
+     * @param batchId
+     * @return
+     */
+    @RequestMapping(value = "/orderInfoDel",method = RequestMethod.POST)
+    @CrossOrigin
+    public CardResponse orderInfoDel(String batchId) {
+        return nmg_order_infoService.orderInfoDel(batchId);
+    }
+
+    /**
+     * 订单状态更新
+     * @param orderId
+     * @param orderState
+     * @return
+     */
+    @RequestMapping(value = "/orderStateUpdate",method = RequestMethod.POST)
+    @CrossOrigin
+    public CardResponse orderStateUpdate(String orderId,String orderState) {
+        return nmg_order_infoService.orderStateUpdate(orderId,orderState);
+    }
+
+    /**
+     * 订单信息导出
+     * @param phone
+     * @return
+     */
+    @RequestMapping(value = "/orderExport",method = RequestMethod.POST)
+    @CrossOrigin
+    public CardResponse orderExport(String phone) {
+        return nmg_order_infoService.orderExport(phone);
+    }
+
 }

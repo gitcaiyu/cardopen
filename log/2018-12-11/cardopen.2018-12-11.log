@@ -1,0 +1,698 @@
+11:40:35.150 [main] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 10733 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+11:40:35.154 [main] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+11:40:36.562 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+11:40:36.575 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+11:40:36.584 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:40:36.584 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+11:40:36.590 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+11:40:36.678 [main] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+11:40:36.679 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1468 ms
+11:40:37.340 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11:40:37.566 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+11:40:37.569 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+11:40:37.584 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+11:40:37.587 [main] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.628 seconds (JVM running for 5.268)
+15:33:52.664 [Thread-9] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:34:02.114 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 13696 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:34:02.118 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:34:02.202 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:34:02.202 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:34:03.949 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:34:03.963 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:34:03.973 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:34:03.973 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:34:03.980 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:34:04.049 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:34:04.049 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1847 ms
+15:34:04.697 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:34:04.912 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:34:04.938 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:34:04.942 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:34:04.955 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:34:04.958 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.463 seconds (JVM running for 4.535)
+15:34:46.403 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:34:46.404 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:34:46.414 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+15:34:46.473 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:34:46.744 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:36:09.950 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:36:09.954 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:36:09.974 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:36:15.837 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 13948 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:36:15.842 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:36:15.893 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:36:15.893 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:36:18.466 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:36:18.498 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:36:18.510 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:36:18.511 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:36:18.522 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:36:18.606 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:36:18.606 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2713 ms
+15:36:19.201 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:36:19.404 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:36:19.430 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:36:19.434 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:36:19.446 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:36:19.450 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 4.263 seconds (JVM running for 5.69)
+15:36:21.591 [http-nio-8001-exec-2] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:36:21.592 [http-nio-8001-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:36:21.601 [http-nio-8001-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+15:36:21.646 [http-nio-8001-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:36:25.303 [http-nio-8001-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:37:58.622 [Thread-18] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:37:58.625 [Thread-18] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:37:58.640 [Thread-18] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:38:04.353 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 14144 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:38:04.369 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:38:04.498 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:38:04.498 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:38:06.531 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:38:06.545 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:38:06.555 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:38:06.555 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:38:06.563 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:38:06.632 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:38:06.632 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2132 ms
+15:38:07.223 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:38:07.469 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:38:07.498 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:38:07.501 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:38:07.513 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:38:07.517 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.876 seconds (JVM running for 4.781)
+15:38:16.700 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:38:16.702 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:38:16.716 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+15:38:16.774 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:38:21.016 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:39:08.969 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:39:08.970 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:39:08.987 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:39:14.095 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 14275 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:39:14.101 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:39:14.254 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:39:14.255 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:39:16.385 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:39:16.397 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:39:16.406 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:39:16.406 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:39:16.412 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:39:16.479 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:39:16.480 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2225 ms
+15:39:17.135 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:39:17.458 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:39:17.496 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:39:17.502 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:39:17.520 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:39:17.523 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 4.208 seconds (JVM running for 5.182)
+15:39:23.740 [Thread-18] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:39:29.566 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 14390 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:39:29.570 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:39:29.659 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:39:29.659 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:39:31.292 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:39:31.305 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:39:31.313 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:39:31.313 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:39:31.319 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:39:31.386 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:39:31.387 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1632 ms
+15:39:31.944 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:39:32.198 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:39:32.242 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:39:32.247 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:39:32.272 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:39:32.277 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.419 seconds (JVM running for 4.451)
+15:39:37.558 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:39:37.559 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:39:37.567 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+15:39:37.604 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:39:43.433 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:40:35.744 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:40:35.745 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:40:35.760 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:40:41.420 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 14560 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:40:41.424 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:40:41.528 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:40:41.529 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:40:43.154 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:40:43.165 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:40:43.173 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:40:43.173 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:40:43.179 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:40:43.246 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:40:43.246 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1717 ms
+15:40:43.933 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:40:44.164 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:40:44.193 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:40:44.196 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:40:44.210 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:40:44.215 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.52 seconds (JVM running for 4.528)
+15:40:50.439 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:40:50.440 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:40:50.451 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+15:40:50.503 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:40:50.834 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:41:23.338 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:41:23.339 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:41:23.353 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:41:28.355 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 14729 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:41:28.366 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:41:28.546 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:41:28.547 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:41:30.314 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:41:30.340 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:41:30.353 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:41:30.354 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:41:30.363 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:41:30.475 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:41:30.476 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1929 ms
+15:41:31.304 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:41:31.613 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:41:31.658 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:41:31.662 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:41:31.684 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:41:31.690 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 4.081 seconds (JVM running for 4.963)
+15:41:36.939 [Thread-18] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:41:42.008 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 14845 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:41:42.018 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:41:42.186 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:41:42.188 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:41:43.986 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:41:43.997 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:41:44.005 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:41:44.006 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:41:44.013 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:41:44.076 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:41:44.078 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1889 ms
+15:41:44.744 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:41:44.952 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:41:44.980 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:41:44.984 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:41:45.001 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:41:45.005 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.861 seconds (JVM running for 4.747)
+15:41:51.396 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:41:51.400 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:41:51.408 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+15:41:51.450 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:41:51.704 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:42:32.459 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:42:32.461 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:42:32.474 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:42:37.491 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 15000 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:42:37.497 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:42:37.691 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:42:37.694 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:42:39.227 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:42:39.240 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:42:39.247 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:42:39.248 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:42:39.256 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:42:39.322 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:42:39.322 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1628 ms
+15:42:39.916 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:42:40.118 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:42:40.148 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:42:40.152 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:42:40.164 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:42:40.167 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.429 seconds (JVM running for 4.261)
+15:42:52.687 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:42:52.688 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:42:52.696 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+15:42:52.740 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:42:56.726 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:43:15.731 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:43:15.734 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:43:15.746 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:43:19.532 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 15221 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:43:19.539 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:43:19.648 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:43:19.648 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:43:21.290 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:43:21.303 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:43:21.312 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:43:21.313 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:43:21.321 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:43:21.389 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:43:21.390 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1742 ms
+15:43:21.985 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:43:22.203 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:43:22.233 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:43:22.236 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:43:22.251 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:43:22.255 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.419 seconds (JVM running for 4.548)
+15:43:29.628 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:43:29.629 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:43:29.643 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+15:43:29.692 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:43:29.944 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:44:38.343 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:44:38.346 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:44:38.371 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:44:43.651 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 15433 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:44:43.658 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:44:43.737 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:44:43.737 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:44:45.374 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:44:45.388 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:44:45.397 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:44:45.398 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:44:45.404 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:44:45.472 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:44:45.472 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1734 ms
+15:44:46.089 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:44:46.339 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:44:46.368 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:44:46.372 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:44:46.386 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:44:46.390 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.481 seconds (JVM running for 4.432)
+15:44:52.615 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:44:52.616 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:44:52.623 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+15:44:52.658 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:44:53.422 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:45:27.200 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:45:27.201 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:45:27.214 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:45:32.522 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 15596 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:45:32.528 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:45:32.631 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:45:32.631 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:45:34.276 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:45:34.288 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:45:34.296 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:45:34.296 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:45:34.302 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:45:34.373 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:45:34.374 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1742 ms
+15:45:35.013 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:45:35.260 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:45:35.288 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:45:35.291 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:45:35.304 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:45:35.308 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.484 seconds (JVM running for 4.529)
+15:46:12.598 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:46:12.599 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:46:12.606 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+15:46:12.649 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:46:14.614 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:46:30.322 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:46:30.323 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:46:30.337 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:46:35.274 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 15730 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:46:35.278 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:46:35.550 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:46:35.561 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:46:36.988 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:46:37.002 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:46:37.011 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:46:37.012 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:46:37.019 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:46:37.093 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:46:37.093 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1532 ms
+15:46:37.736 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:46:37.961 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:46:37.988 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:46:37.992 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:46:38.006 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:46:38.009 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.464 seconds (JVM running for 4.335)
+15:47:02.117 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:47:02.118 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:47:02.129 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+15:47:02.170 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:47:09.218 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:47:39.579 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:47:39.580 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:47:39.592 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:47:45.340 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 15930 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:47:45.349 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:47:45.475 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:47:45.477 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:47:47.057 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:47:47.070 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:47:47.078 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:47:47.078 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:47:47.084 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:47:47.146 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:47:47.147 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1669 ms
+15:47:47.749 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:47:47.981 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:47:48.014 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:47:48.019 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:47:48.036 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:47:48.040 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.402 seconds (JVM running for 4.358)
+15:47:51.518 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:47:51.519 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:47:51.529 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+15:47:51.579 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:47:55.102 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:48:33.704 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:48:33.706 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:48:33.718 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:48:38.947 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 16087 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:48:38.955 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:48:39.057 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:48:39.058 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:48:40.413 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:48:40.424 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:48:40.433 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:48:40.434 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:48:40.440 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:48:40.504 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:48:40.504 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1446 ms
+15:48:41.084 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:48:41.291 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:48:41.322 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:48:41.326 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:48:41.338 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:48:41.342 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.059 seconds (JVM running for 3.95)
+15:48:49.284 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:48:49.285 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:48:49.293 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+15:48:49.333 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:48:52.182 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:49:51.352 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:49:51.353 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:49:51.374 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:49:57.551 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 16348 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+15:49:57.555 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+15:49:57.739 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:49:57.741 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:49:59.285 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+15:49:59.296 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+15:49:59.304 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:49:59.305 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+15:49:59.311 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+15:49:59.388 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+15:49:59.389 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1647 ms
+15:50:00.033 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:50:00.249 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:50:00.280 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+15:50:00.283 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:50:00.298 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+15:50:00.302 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.469 seconds (JVM running for 4.423)
+15:50:05.867 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:50:05.867 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:50:05.876 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+15:50:05.915 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:50:13.832 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:30:00.490 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:30:00.492 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:30:00.502 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:30:04.660 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 17401 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:30:04.675 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:30:04.988 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:30:04.988 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:30:07.080 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:30:07.095 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:30:07.104 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:30:07.105 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:30:07.113 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:30:07.188 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:30:07.188 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2200 ms
+16:30:07.840 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:30:08.055 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:30:08.089 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:30:08.092 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:30:08.106 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:30:08.111 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 4.472 seconds (JVM running for 5.461)
+16:30:54.775 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:30:54.776 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:30:54.802 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 26 ms
+16:30:54.880 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:30:56.304 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:34:09.207 [Thread-18] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:34:09.209 [Thread-18] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:34:09.220 [Thread-18] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:34:14.353 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 17611 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:34:14.357 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:34:14.481 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:34:14.481 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:34:15.947 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:34:15.960 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:34:15.971 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:34:15.971 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:34:15.978 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:34:16.046 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:34:16.046 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1564 ms
+16:34:16.644 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:34:16.868 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:34:16.897 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:34:16.901 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:34:16.915 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:34:16.918 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.391 seconds (JVM running for 4.321)
+16:34:25.486 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:34:25.487 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:34:25.499 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+16:34:25.554 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:34:25.845 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:37:26.396 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:37:26.398 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:37:26.416 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:37:31.768 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 17943 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:37:31.772 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:37:31.850 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:37:31.850 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:37:33.536 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:37:33.548 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:37:33.557 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:37:33.557 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:37:33.565 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:37:33.634 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:37:33.634 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1783 ms
+16:37:34.435 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:37:34.646 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:37:34.674 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:37:34.678 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:37:34.694 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:37:34.698 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.593 seconds (JVM running for 4.564)
+16:37:39.548 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:37:39.549 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:37:39.568 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+16:37:39.633 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:37:40.215 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:38:13.862 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:38:13.868 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:38:13.900 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:38:19.061 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 18107 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:38:19.066 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:38:19.130 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:38:19.131 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:38:20.909 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:38:20.921 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:38:20.930 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:38:20.930 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:38:20.936 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:38:20.997 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:38:20.997 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1866 ms
+16:38:21.853 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:38:22.107 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:38:22.143 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:38:22.148 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:38:22.181 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:38:22.186 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.878 seconds (JVM running for 4.737)
+16:38:26.128 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:38:26.130 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:38:26.142 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+16:38:26.191 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:38:34.199 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:39:21.755 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:39:21.756 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:39:21.765 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:39:27.639 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 18248 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:39:27.644 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:39:27.746 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:39:27.747 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:39:29.636 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:39:29.649 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:39:29.659 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:39:29.660 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:39:29.667 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:39:29.732 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:39:29.732 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1984 ms
+16:39:30.340 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:39:30.535 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:39:30.565 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:39:30.569 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:39:30.585 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:39:30.589 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.606 seconds (JVM running for 4.904)
+16:39:34.977 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:39:34.977 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:39:34.986 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+16:39:35.034 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:39:38.566 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:40:32.969 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:40:32.971 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:40:32.986 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:40:38.720 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 18416 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:40:38.725 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:40:38.845 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:40:38.846 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:40:40.446 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:40:40.458 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:40:40.466 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:40:40.467 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:40:40.473 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:40:40.533 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:40:40.533 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1687 ms
+16:40:41.133 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:40:41.323 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:40:41.354 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:40:41.358 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:40:41.371 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:40:41.374 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.393 seconds (JVM running for 4.387)
+16:40:46.123 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:40:46.125 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:40:46.136 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+16:40:46.195 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:40:46.412 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:51:21.306 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:51:21.307 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:51:21.322 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:51:27.455 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 19228 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:51:27.463 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:51:27.544 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:51:27.544 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:51:29.075 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:51:29.087 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:51:29.095 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:51:29.095 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:51:29.101 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:51:29.164 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:51:29.164 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1620 ms
+16:51:29.722 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:51:29.922 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:51:29.951 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:51:29.955 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:51:29.967 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:51:29.972 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.216 seconds (JVM running for 4.134)
+16:51:39.961 [http-nio-8001-exec-2] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:51:39.962 [http-nio-8001-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:51:39.978 [http-nio-8001-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+16:51:40.062 [http-nio-8001-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:51:40.329 [http-nio-8001-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:52:12.706 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:52:12.709 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:52:12.722 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:52:17.866 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 19396 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:52:17.871 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:52:17.975 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:52:17.976 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:52:19.621 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:52:19.635 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:52:19.645 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:52:19.646 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:52:19.654 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:52:19.720 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:52:19.721 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1745 ms
+16:52:20.325 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:52:20.535 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:52:20.565 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:52:20.569 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:52:20.582 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:52:20.585 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.391 seconds (JVM running for 4.291)
+16:52:28.138 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:52:28.138 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:52:28.150 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+16:52:28.199 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:52:36.138 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:53:33.231 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:53:33.232 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:53:33.239 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:53:38.100 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 19623 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:53:38.138 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:53:38.244 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:53:38.246 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:53:40.038 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:53:40.049 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:53:40.056 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:53:40.057 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:53:40.063 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:53:40.125 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:53:40.125 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1878 ms
+16:53:40.705 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:53:40.927 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:53:40.958 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:53:40.964 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:53:40.977 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:53:40.982 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.507 seconds (JVM running for 4.399)
+16:53:47.800 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:53:47.800 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:53:47.817 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 17 ms
+16:53:47.878 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:53:48.110 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:57:21.424 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:57:21.426 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:57:21.437 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:57:27.129 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 19822 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:57:27.141 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:57:27.274 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:57:27.275 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:57:28.922 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:57:28.935 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:57:28.943 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:57:28.944 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:57:28.950 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:57:29.026 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:57:29.026 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1751 ms
+16:57:29.649 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:57:29.895 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:57:29.928 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:57:29.932 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:57:29.945 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:57:29.948 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.59 seconds (JVM running for 4.502)
+16:57:36.700 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:57:36.702 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:57:36.722 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+16:57:36.786 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:57:44.844 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:58:22.432 [Thread-16] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:58:22.434 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:58:22.444 [Thread-16] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:58:28.034 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 19950 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:58:28.045 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:58:28.157 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:58:28.158 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:58:29.708 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:58:29.723 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:58:29.735 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:58:29.736 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:58:29.744 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:58:29.818 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:58:29.818 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1660 ms
+16:58:30.465 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:58:30.712 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:58:30.750 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:58:30.755 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:58:30.770 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:58:30.775 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.583 seconds (JVM running for 4.525)
+16:58:34.228 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:58:34.229 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:58:34.241 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+16:58:34.292 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:58:42.287 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:59:24.563 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+16:59:24.564 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:59:24.576 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:59:30.266 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Starting CardopenApplication on leadeon-HP-ENVY-Notebook with PID 20090 (/media/leadeon/TOSHIBA/Development/workspace/cardopen/out/production/classes started by leadeon in /media/leadeon/TOSHIBA/Development/workspace/cardopen)
+16:59:30.272 [restartedMain] INFO  c.l.cardopen.CardopenApplication - No active profile set, falling back to default profiles: default
+16:59:30.360 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:59:30.361 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:59:32.047 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+16:59:32.059 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+16:59:32.070 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:59:32.070 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.13
+16:59:32.079 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+16:59:32.141 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring embedded WebApplicationContext
+16:59:32.142 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1781 ms
+16:59:32.763 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:59:33.000 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:59:33.033 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+16:59:33.037 [restartedMain] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+16:59:33.051 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path '/cardopen'
+16:59:33.054 [restartedMain] INFO  c.l.cardopen.CardopenApplication - Started CardopenApplication in 3.669 seconds (JVM running for 4.623)
+16:59:49.998 [http-nio-8001-exec-1] INFO  o.a.c.c.C.[.[localhost].[/cardopen] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:59:49.999 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:59:50.023 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 24 ms
+16:59:50.103 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:59:58.155 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
