@@ -696,3 +696,6 @@
 16:59:50.023 [http-nio-8001-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 24 ms
 16:59:50.103 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
 16:59:58.155 [http-nio-8001-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+17:27:54.102 [Thread-17] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+17:27:54.104 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+17:27:54.114 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

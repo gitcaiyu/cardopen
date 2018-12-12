@@ -12,8 +12,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
-//@Aspect
-//@Component
+@Aspect
+@Component
 @Slf4j
 public class AspectFilter {
 

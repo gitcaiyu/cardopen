@@ -3,11 +3,11 @@ package cn.leadeon.cardopen.action;
 import cn.leadeon.cardopen.common.reqBody.OrderSubmission;
 import cn.leadeon.cardopen.common.resBody.CardResponse;
 import cn.leadeon.cardopen.service.nmg_order_infoService;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 public class nmg_order_infoController {
@@ -17,13 +17,13 @@ public class nmg_order_infoController {
 
     /**
      * 申请开卡页面初始化
-     * @param phone
+     * @param data
      * @return
      */
     @RequestMapping(value = "/applyCard",method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse applyCard(String phone) {
-        return nmg_order_infoService.applyCard(phone);
+    public CardResponse applyCard(@RequestBody String data) {
+        return nmg_order_infoService.applyCard(data);
     }
 
     /**
@@ -32,54 +32,53 @@ public class nmg_order_infoController {
      */
     @RequestMapping(value = "/submission",method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse submission(OrderSubmission orderSubmission) {
+    public CardResponse submission(@Valid @RequestBody OrderSubmission orderSubmission) {
         return nmg_order_infoService.submission(orderSubmission);
     }
 
     /**
      * 查询申请记录
-     * @param phone
+     * @param data
      * @return
      */
     @RequestMapping(value = "/detail",method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse detail(String phone) {
-        return nmg_order_infoService.detail(phone);
+    public CardResponse detail(@RequestBody String data) {
+        return nmg_order_infoService.detail(data);
     }
 
 
     /**
      * 订单明细删除
-     * @param batchId
+     * @param data
      * @return
      */
     @RequestMapping(value = "/orderInfoDel",method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse orderInfoDel(String batchId) {
-        return nmg_order_infoService.orderInfoDel(batchId);
+    public CardResponse orderInfoDel(@RequestBody String data) {
+        return nmg_order_infoService.orderInfoDel(data);
     }
 
     /**
      * 订单状态更新
-     * @param orderId
-     * @param orderState
+     * @param data
      * @return
      */
     @RequestMapping(value = "/orderStateUpdate",method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse orderStateUpdate(String orderId,String orderState) {
-        return nmg_order_infoService.orderStateUpdate(orderId,orderState);
+    public CardResponse orderStateUpdate(@RequestBody String data) {
+        return nmg_order_infoService.orderStateUpdate(data);
     }
 
     /**
      * 订单信息导出
-     * @param phone
+     * @param data
      * @return
      */
     @RequestMapping(value = "/orderExport",method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse orderExport(String phone) {
-        return nmg_order_infoService.orderExport(phone);
+    public CardResponse orderExport(@RequestBody String data) {
+        return nmg_order_infoService.orderExport(data);
     }
 
 }
