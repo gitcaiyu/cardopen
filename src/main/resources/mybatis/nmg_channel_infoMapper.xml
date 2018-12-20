@@ -99,4 +99,8 @@
     delete from nmg_channel_info where channel_id = #{channelId,jdbcType=VARCHAR}
   </delete>
 
+  <update id="channelUpdate" parameterMap="BaseResultMap">
+    update nmg_channel_info set channel_name = #{channelName,jdbcType=VARCHAR},city = #{city,jdbcType=VARCHAR},county = #{county,jdbcType=VARCHAR},charge_name = #{chargeName,jdbcType=VARCHAR},charge_tel = #{chargeTel,jdbcType=VARCHAR},channel_address = #{channelAddress,jdbcType=VARCHAR}
+  </update>
+
 </mapper>
