@@ -100,7 +100,17 @@
   </delete>
 
   <update id="channelUpdate" parameterMap="BaseResultMap">
-    update nmg_channel_info set channel_name = #{channelName,jdbcType=VARCHAR},city = #{city,jdbcType=VARCHAR},county = #{county,jdbcType=VARCHAR},charge_name = #{chargeName,jdbcType=VARCHAR},charge_tel = #{chargeTel,jdbcType=VARCHAR},channel_address = #{channelAddress,jdbcType=VARCHAR}
+    update
+      nmg_channel_info
+    set
+      channel_name = #{channelName,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      county = #{county,jdbcType=VARCHAR},
+      charge_name = #{chargeName,jdbcType=VARCHAR},
+      charge_tel = #{chargeTel,jdbcType=VARCHAR},
+      channel_address = #{channelAddress,jdbcType=VARCHAR}
+    where
+      channel_id = #{channelId,jdbcType=VARCHAR}
   </update>
 
 </mapper>
