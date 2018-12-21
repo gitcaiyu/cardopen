@@ -39,4 +39,8 @@ public class nmg_order_info {
     private String orderPhone;
 
     private String orderPeople;
+
+    private String orderOtherPhone;
+
+    private String orderOtherPeople;
 }
