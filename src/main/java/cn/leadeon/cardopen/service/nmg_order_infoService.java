@@ -114,7 +114,9 @@ public class nmg_order_infoService {
         CardResponse cardResponse = new CardResponse();
         String phone = JSONObject.parseObject(data).getString("phone");
         if (phone != null) {
-            cardResponse.setResBody(nmg_order_infoMapper.detail(phone));
+            Map param = new HashMap();
+            param.put("phone",phone);
+            cardResponse.setResBody(nmg_order_infoMapper.detail(param));
         } else {
             cardResponse.setResCode(CodeEnum.nullValue.getCode());
             cardResponse.setResDesc(CodeEnum.nullValue.getDesc());
