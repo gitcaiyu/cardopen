@@ -49,30 +49,32 @@ public class nmg_order_infoService {
         CardResponse cardResponse = new CardResponse();
         String phone = JSONObject.parseObject(data).getString("phone");
         try {
-            List result = new ArrayList();
+            Map param = new HashMap();
+            Map result = new HashMap();
             Map map = new HashMap();
-            map.put("meal",nmg_meal_infoMapper.applyCardMeal());
-            result.add(map);
-            map = new HashMap();
-            map.put("discount",nmg_discount_infoMapper.applyCardDisc());
-            result.add(map);
-            map = new HashMap();
             nmg_user_info nmg_user_info = nmg_user_infoMapper.getUserInfoByPhone(phone);
+            param.put("city",nmg_user_info.getCityCode());
+            map.put("meal",nmg_meal_infoMapper.applyCardMeal(param));
+            result.put("meal",map);
+            map = new HashMap();
+            map.put("discount",nmg_discount_infoMapper.applyCardDisc(param));
+            result.put("discount",map);
+            map = new HashMap();
             //userType=1：盟市管理员，userType=2：普通社渠人员
             if (nmg_user_info.getUserType().equals("1")) {
                 map.put("city",nmg_user_info.getCityCode());
-                map.put("channelName", nmg_channel_infoMapper.myChannelInfo(map));
+                map.put("channel", nmg_channel_infoMapper.myChannelInfo(map));
             } else {
-                map.put("chargeTel",phone);
-                map.put("channelName", nmg_channel_infoMapper.myChannelInfo(map));
+                param.put("chargeTel",phone);
+                map.put("channel", nmg_channel_infoMapper.myChannelInfo(param));
             }
-            result.add(map);
-            cardResponse.setResBody(result);
-            cardResponse.setResCode(CodeEnum.success.getCode());
-            cardResponse.setResDesc(CodeEnum.success.getDesc());
+            result.put("channelBase",map);
+            cardResponse.setRspBody(result);
+            cardResponse.setRetCode(CodeEnum.success.getCode());
+            cardResponse.setRetDesc(CodeEnum.success.getDesc());
         } catch (Exception e) {
-            cardResponse.setResCode(CodeEnum.failed.getCode());
-            cardResponse.setResDesc(CodeEnum.failed.getDesc());
+            cardResponse.setRetCode(CodeEnum.failed.getCode());
+            cardResponse.setRetDesc(CodeEnum.failed.getDesc());
         }
         return cardResponse;
     }
@@ -99,12 +101,12 @@ public class nmg_order_infoService {
                     }
                 }
             } catch (Exception e) {
-                cardResponse.setResCode(CodeEnum.failed.getCode());
-                cardResponse.setResDesc(CodeEnum.failed.getDesc());
+                cardResponse.setRetCode(CodeEnum.failed.getCode());
+                cardResponse.setRetDesc(CodeEnum.failed.getDesc());
             }
         } else {
-            cardResponse.setResCode(CodeEnum.nullValue.getCode());
-            cardResponse.setResDesc(CodeEnum.nullValue.getDesc());
+            cardResponse.setRetCode(CodeEnum.nullValue.getCode());
+            cardResponse.setRetDesc(CodeEnum.nullValue.getDesc());
         }
         return cardResponse;
     }
@@ -116,10 +118,12 @@ public class nmg_order_infoService {
         if (phone != null) {
             Map param = new HashMap();
             param.put("phone",phone);
-            cardResponse.setResBody(nmg_order_infoMapper.detail(param));
+            Map result = new HashMap();
+            result.put("detail",nmg_order_infoMapper.detail(param));
+            cardResponse.setRspBody(result);
         } else {
-            cardResponse.setResCode(CodeEnum.nullValue.getCode());
-            cardResponse.setResDesc(CodeEnum.nullValue.getDesc());
+            cardResponse.setRetCode(CodeEnum.nullValue.getCode());
+            cardResponse.setRetDesc(CodeEnum.nullValue.getDesc());
         }
         return cardResponse;
     }
@@ -131,8 +135,8 @@ public class nmg_order_infoService {
         if (batchId != null) {
             nmg_order_infoMapper.orderInfoDel(batchId);
         } else {
-            cardResponse.setResCode(CodeEnum.nullValue.getCode());
-            cardResponse.setResDesc(CodeEnum.nullValue.getDesc());
+            cardResponse.setRetCode(CodeEnum.nullValue.getCode());
+            cardResponse.setRetDesc(CodeEnum.nullValue.getDesc());
         }
         return cardResponse;
     }
@@ -148,8 +152,8 @@ public class nmg_order_infoService {
             param.put("orderState",orderState);
             nmg_order_infoMapper.orderStateUpdate(param);
         } else {
-            cardResponse.setResCode(CodeEnum.nullValue.getCode());
-            cardResponse.setResDesc(CodeEnum.nullValue.getDesc());
+            cardResponse.setRetCode(CodeEnum.nullValue.getCode());
+            cardResponse.setRetDesc(CodeEnum.nullValue.getDesc());
         }
         return cardResponse;
     }
@@ -205,10 +209,10 @@ public class nmg_order_infoService {
             hssfWorkbook.write(fileOutputStream);
             fileOutputStream.close();
             hssfWorkbook.close();
-            cardResponse.setResDesc(fileName);
+            cardResponse.setRetDesc(fileName);
         } catch (Exception e) {
-            cardResponse.setResCode(CodeEnum.failed.getCode());
-            cardResponse.setResDesc(CodeEnum.failed.getDesc());
+            cardResponse.setRetCode(CodeEnum.failed.getCode());
+            cardResponse.setRetDesc(CodeEnum.failed.getDesc());
         }
         return cardResponse;
     }

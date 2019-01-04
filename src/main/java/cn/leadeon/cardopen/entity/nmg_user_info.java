@@ -23,4 +23,6 @@ public class nmg_user_info {
     private String createTime;
 
     private String updateTime;
+
+    private String createPeople;
 }

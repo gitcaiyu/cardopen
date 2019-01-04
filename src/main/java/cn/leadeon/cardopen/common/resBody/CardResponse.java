@@ -3,23 +3,23 @@ package cn.leadeon.cardopen.common.resBody;
 import cn.leadeon.cardopen.common.CodeEnum;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @Data
 public class CardResponse {
 
-    private String resCode;
+    private String retCode;
 
-    private List resBody;
+    private Map rspBody;
 
-    private String resDesc;
+    private String retDesc;
 
     //默认返回成功
     public CardResponse() {
-        setResCode(CodeEnum.success.getCode());
-        setResDesc(CodeEnum.success.getDesc());
-        setResBody(new ArrayList());
+        setRetCode(CodeEnum.success.getCode());
+        setRetDesc(CodeEnum.success.getDesc());
+        setRspBody(new HashMap());
     }
 
 }

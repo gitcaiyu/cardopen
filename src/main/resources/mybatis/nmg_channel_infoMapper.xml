@@ -83,9 +83,23 @@
   </insert>
 
   <select id="myChannelInfo" parameterType="java.util.Map" resultType="java.util.Map">
-    select
-      channel_id,channel_name,channel_type,city,county,charge_name,charge_tel,channel_address,channel_code
-    from nmg_channel_info
+    SELECT
+    channel_id,
+    channel_name,
+    CASE
+    WHEN channel_type = 1 THEN
+    '社会渠道' ELSE '自营渠道'
+    END channel_type,
+    city.city_name,
+    county.county_name,
+    charge_name,
+    charge_tel,
+    channel_address,
+    channel_code
+    FROM
+    nmg_channel_info channel
+    INNER JOIN nmg_city_info city ON channel.city = city.city_code
+    INNER JOIN nmg_county_info county ON channel.county = county.county_id
     where 1 = 1
     <if test="chargeTel != null">
       and charge_tel = #{chargeTel,jdbcType=VARCHAR}
@@ -93,13 +107,31 @@
     <if test="city != null">
       and city = #{city,jdbcType=VARCHAR}
     </if>
+    <if test="county != null">
+      and county = #{county,jdbcType=VARCHAR}
+    </if>
+    <if test="channelType != null" >
+      and channel_type = #{channelType,jdbcType=VARCHAR}
+    </if>
+    <if test="channelName != null" >
+      and channel_name = #{channelName,jdbcType=VARCHAR}String
+    </if>
+    <if test="channelCode != null">
+      and channel_code = #{channelCode,jdbcType=VARCHAR}
+    </if>
+    <if test="chargeName != null" >
+      and charge_name = #{chargeName,jdbcType=VARCHAR}
+    </if>
+    <if test="chargeTel != null" >
+      and charge_tel = #{chargeTel,jdbcType=VARCHAR}
+    </if>
   </select>
 
   <delete id="channelDel" parameterType="java.lang.String">
     delete from nmg_channel_info where channel_id = #{channelId,jdbcType=VARCHAR}
   </delete>
 
-  <update id="channelUpdate" parameterMap="BaseResultMap">
+  <update id="channelUpdate" parameterType="cn.leadeon.cardopen.entity.nmg_channel_info">
     update
       nmg_channel_info
     set

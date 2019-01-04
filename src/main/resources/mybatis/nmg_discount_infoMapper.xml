@@ -46,6 +46,18 @@
   </insert>
 
   <select id="applyCardDisc" parameterType="java.lang.String" resultType="java.util.Map">
-    select discount_id,discount_code,discount_name,city from nmg_discount_info
+    select discount_id,discount_code,discount_name,city,flag from nmg_discount_info where 1 = 1
+    <if test="city != null">
+      and city = #{city,jdbcType=VARCHAR} or city = null or city = ""
+    </if>
+    <if test="city == null">
+      and city = null or city = ""
+    </if>
+    <if test="flag != null">
+      and flag = #{flag,jdbcType=VARCHAR}
+    </if>
+    <if test="discountId != null">
+      and discount_id = #{discountId,jdbcType=VARCHAR}
+    </if>
   </select>
 </mapper>

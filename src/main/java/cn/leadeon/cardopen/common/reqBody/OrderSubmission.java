@@ -12,19 +12,16 @@ public class OrderSubmission {
     /**
      * 收件人名字
      */
-    @NotBlank(message = "收件人名字不能为空")
     private String name;
 
     /**
      * 收件人联系方式
      */
-    @NotBlank(message = "收件人联系方式不能为空")
     private String phone;
 
     /**
      * 渠道编码
      */
-    @NotBlank(message = "渠道编码不能为空")
     private String code;
 
     /**

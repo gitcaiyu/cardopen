@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 @RestController
 @Slf4j
 public class nmg_channel_infoController {
@@ -21,8 +23,8 @@ public class nmg_channel_infoController {
      */
     @RequestMapping(value = "/myChannelInfo",method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse myChannelInfo(@RequestBody String data) {
-        return nmg_channel_infoService.myChannelInfo(data);
+    public CardResponse myChannelInfo(@RequestBody String data, HttpSession httpSession) {
+        return nmg_channel_infoService.myChannelInfo(data,httpSession);
     }
 
     /**
