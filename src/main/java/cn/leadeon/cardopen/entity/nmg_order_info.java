@@ -24,7 +24,7 @@ public class nmg_order_info {
 
     private String orderCount;
 
-    private String orderState;
+    private String orderState = "1";
 
     private String createTime;
 

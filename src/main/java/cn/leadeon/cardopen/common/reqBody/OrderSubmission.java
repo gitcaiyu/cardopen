@@ -4,6 +4,7 @@ import cn.leadeon.cardopen.entity.nmg_order_info;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -27,12 +28,11 @@ public class OrderSubmission {
     /**
      * 渠道地址
      */
-    @NotBlank(message = "渠道地址不能为空")
     private String address;
 
     /**
      * 申请开卡明细信息
      */
-    private List<nmg_order_info> result;
+    private List<nmg_order_info> orderResult = new ArrayList<nmg_order_info>();
 
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.Map;
 
 @RestController
 public class nmg_order_infoController {
@@ -33,8 +34,8 @@ public class nmg_order_infoController {
      */
     @RequestMapping(value = "/submission",method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse submission(@Valid @RequestBody OrderSubmission orderSubmission) {
-        return nmg_order_infoService.submission(orderSubmission);
+    public CardResponse submission(@RequestBody Map map) {
+        return nmg_order_infoService.submission(map);
     }
 
     /**

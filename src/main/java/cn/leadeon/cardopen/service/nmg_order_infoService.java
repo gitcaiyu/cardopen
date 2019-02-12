@@ -39,7 +39,13 @@ public class nmg_order_infoService {
     private nmg_order_infoMapper nmg_order_infoMapper;
 
     @Autowired
-    private cn.leadeon.cardopen.mapper.nmg_user_infoMapper nmg_user_infoMapper;
+    private nmg_user_infoMapper nmg_user_infoMapper;
+
+    @Autowired
+    private nmg_city_infoMapper nmg_city_infoMapper;
+
+    @Autowired
+    private nmg_county_infoMapper nmg_county_infoMapper;
 
     @Value("${file.path}")
     private String path;
@@ -80,23 +86,41 @@ public class nmg_order_infoService {
     }
 
     @Transactional
-    public CardResponse submission(OrderSubmission orderSubmission) {
+    public CardResponse submission(Map map) {
+        Map reqBody = (Map) map.get("reqBody");
         CardResponse cardResponse = new CardResponse();
-        if (orderSubmission.getResult().size() != 0) {
+        List orderResult = (List) reqBody.get("orderResult");
+        Map param = new HashMap();
+        param.put("cityName",reqBody.get("city"));
+        param.put("countyName",reqBody.get("country"));
+        if (orderResult.size() != 0) {
             try {
-                JSONArray order = JSONArray.parseArray(orderSubmission.getResult().toString());
-                String orderId = RandomUtil.orderid(orderSubmission.getCode());
-                for (int i = 0; i < order.size(); i++) {
-                    nmg_order_info nmg_order_info = (cn.leadeon.cardopen.entity.nmg_order_info) order.get(i);
-                    if (nmg_order_info.getOrderId() == null) {
+                String city = nmg_city_infoMapper.cityInfo(param).getCityCode();
+                String orderId = RandomUtil.orderid(city);
+                for (int i = 0; i < orderResult.size(); i++) {
+                    nmg_order_info nmg_order_info = new nmg_order_info();
+                    Map result = (Map) orderResult.get(i);
+                    if (reqBody.get("orderId") == null) {
                         nmg_order_info.setOrderId(orderId);
-                        nmg_order_info.setOrderPeople(orderSubmission.getName());
+                        nmg_order_info.setOrderOtherPeople(reqBody.get("orderOtherPeople").toString());
+                        nmg_order_info.setOrderOtherPhone(reqBody.get("orderOtherPhone").toString());
                         nmg_order_info.setSubTime(DateUtil.getDateString());
                         nmg_order_info.setCreateTime(DateUtil.getDateString());
+                        nmg_order_info.setChannelName(reqBody.get("channelName").toString());
+                        nmg_order_info.setChannelId(reqBody.get("channelId").toString());
+                        nmg_order_info.setCity(city);
+                        nmg_order_info.setCounty(nmg_county_infoMapper.countyInfo(param).get(0).get("county_id").toString());
+                        nmg_order_info.setOrderMeal(result.get("orderMeal").toString());
+                        nmg_order_info.setOrderTariff(result.get("orderTariff").toString());
+                        nmg_order_info.setOrderDiscount(result.get("orderDiscount").toString());
+                        nmg_order_info.setOrderCount(result.get("orderCount").toString());
+                        nmg_order_info.setOrderAddressee(reqBody.get("address").toString());
+                        nmg_order_info.setOrderPhone(reqBody.get("phone").toString());
+                        nmg_order_info.setOrderPeople(reqBody.get("name").toString());
                         nmg_order_infoMapper.insert(nmg_order_info);
                     } else {
                         nmg_order_info.setUpdateTime(DateUtil.getDateString());
-                        nmg_order_info.setUpdatePeople(orderSubmission.getName());
+                        nmg_order_info.setUpdatePeople(map.get("orderOtherPhone").toString());
                         nmg_order_infoMapper.updateOrderInfo(nmg_order_info);
                     }
                 }
