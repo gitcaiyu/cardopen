@@ -167,43 +167,63 @@
 
   <select id="detail" parameterType="java.util.Map" resultType="java.util.Map">
     SELECT
-        noi.order_id,
-        noi.batch_id,
-        noi.city,
-        noi.county,
-        noi.channel_id,
-        noi.channel_name,
-        nmi.meal_name,
-        nmi.meal_code,
-        ndi.discount_name,
-        noi.order_count,
-        noi.order_state,
-        noi.create_time,
-        noi.update_time,
-        noi.update_people,
-        noi.sub_time,
-        noi.order_addressee,
-    CASE
-
-            WHEN noi.order_other_phone IS NULL THEN
-            noi.order_phone ELSE noi.order_other_phone
-        END order_phone,
-    CASE
-
-            WHEN noi.order_other_people IS NULL THEN
-            noi.order_people ELSE noi.order_other_people
-        END order_people
+    noi.order_id as number,
+    nmi.meal_name,
+    nmi.meal_code,
+    ndi.discount_name,
+    noi.order_count as amount,
+    noi.order_state AS status,
+    noi.sub_time as applyTime
     FROM
-        nmg_order_info noi
-        LEFT JOIN nmg_meal_info nmi ON noi.order_meal = nmi.meal_id
-        LEFT JOIN nmg_discount_info ndi ON ndi.discount_id = noi.order_discount
-    WHERE 1 = 1
-      <if test="phone != null">
-        and order_phone = #{phone,jdbcType=VARCHAR} or order_other_phone = #{phone,jdbcType=VARCHAR}
-      </if>
-      <if test="people != null">
-        and order_people = #{people,jdbcType=VARCHAR} or order_other_people = #{people,jdbcType=VARCHAR}
-      </if>
+    nmg_order_info noi
+    LEFT JOIN nmg_meal_info nmi ON noi.order_meal = nmi.meal_code
+    OR noi.order_meal = nmi.meal_code
+    LEFT JOIN nmg_discount_info ndi ON ndi.discount_id = noi.order_discount
+    OR noi.order_discount = ndi.discount_code
+    LEFT JOIN nmg_channel_info nci ON noi.channel_id = nci.channel_id
+    LEFT JOIN nmg_city_info city ON noi.city = city.city_code
+    LEFT JOIN nmg_county_info county ON noi.county = county.county_id
+    WHERE
+    1 = 1
+    <if test="phone != null">
+      and order_other_phone = #{phone,jdbcType=VARCHAR}
+    </if>
+    <if test="people != null">
+      and order_other_people = #{people,jdbcType=VARCHAR}
+    </if>
+    <if test="city != null">
+      and city.city_code = #{city,jdbcType=VARCHAR}
+    </if>
+    <if test="county != null">
+      and noi.county = #{county,jdbcType=VARCHAR}
+    </if>
+    <if test="meal != null">
+      and nmi.meal_code = #{meal,jdbcType=VARCHAR}
+    </if>
+    <if test="discount != null">
+      and ndi.discount_id = #{discount,jdbcType=VARCHAR}
+    </if>
+    <if test="tariff != null">
+      and noi.order_tariff = #{tariff,jdbcType=VARCHAR}
+    </if>
+    <if test="state != null">
+      and noi.order_state = #{state,jdbcType=VARCHAR}
+    </if>
+    <if test="channelName != null">
+      and noi.channel_name = #{channelName,jdbcType=VARCHAR}
+    </if>
+    <if test="subtime != null">
+      and noi.sub_time between #{subtime,jdbcType=VARCHAR} and #{subtimeE,jdbcType=VARCHAR}
+    </if>
+    <if test="createtime != null">
+      and noi.create_time between #{createtime,jdbcType=VARCHAR} and #{createtimeE,jdbcType=VARCHAR}
+    </if>
+    <if test="channelType != null">
+      and channel_type = #{channelType,jdbcType=VARCHAR}
+    </if>
+    <if test="orderId != null">
+      and noi.order_id = #{orderId}
+    </if>
   </select>
 
   <select id="exportOrder" parameterType="java.lang.String" resultType="java.util.Map">
@@ -248,5 +268,9 @@
   <update id="orderStateUpdate" parameterType="java.util.Map">
     update nmg_order_info set order_state = #{orderState,jdbcType=VARCHAR} where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
+
+  <select id="getCountById" parameterType="java.util.Map" resultType="java.util.Map">
+    select order_count from nmg_order_info where order_id = #{orderId}
+  </select>
 
 </mapper>

@@ -104,8 +104,7 @@ public class nmg_order_infoService {
                         nmg_order_info.setOrderId(orderId);
                         nmg_order_info.setOrderOtherPeople(reqBody.get("orderOtherPeople").toString());
                         nmg_order_info.setOrderOtherPhone(reqBody.get("orderOtherPhone").toString());
-                        nmg_order_info.setSubTime(DateUtil.getDateString());
-                        nmg_order_info.setCreateTime(DateUtil.getDateString());
+                        nmg_order_info.setSubTime(DateUtil.formatFullDateToString());
                         nmg_order_info.setChannelName(reqBody.get("channelName").toString());
                         nmg_order_info.setChannelId(reqBody.get("channelId").toString());
                         nmg_order_info.setCity(city);
@@ -138,10 +137,33 @@ public class nmg_order_infoService {
     @Transactional
     public CardResponse detail(String data) {
         CardResponse cardResponse = new CardResponse();
+        JSONObject jsonObject = JSONObject.parseObject(data).getJSONObject("reqBody");
         String phone = JSONObject.parseObject(data).getString("phone");
+        String subTime = jsonObject.getString("subTime");
+        String subTImeE = jsonObject.getString("subTImeE");
+        String createTime = jsonObject.getString("createTime");
+        String createTimeE = jsonObject.getString("createTimeE");
+        String state = jsonObject.getString("state");
         if (phone != null) {
             Map param = new HashMap();
-            param.put("phone",phone);
+            if (!phone.equals("")) {
+                param.put("phone", phone);
+            }
+            if (!subTime.equals("")) {
+                param.put("subTime", subTime);
+            }
+            if (!subTImeE.equals("")) {
+                param.put("subtimeE", subTImeE);
+            }
+            if (!createTime.equals("")) {
+                param.put("createTime", createTime);
+            }
+            if (!createTimeE.equals("")) {
+                param.put("createTimeE", createTimeE);
+            }
+            if (!state.equals("")) {
+                param.put("state", state);
+            }
             Map result = new HashMap();
             result.put("detail",nmg_order_infoMapper.detail(param));
             cardResponse.setRspBody(result);
@@ -238,6 +260,27 @@ public class nmg_order_infoService {
             cardResponse.setRetCode(CodeEnum.failed.getCode());
             cardResponse.setRetDesc(CodeEnum.failed.getDesc());
         }
+        return cardResponse;
+    }
+
+    public CardResponse modify(String data) {
+        String phone = JSONObject.parseObject(data).getString("phone");
+        String orderId = JSONObject.parseObject(data).getString("orderId");
+        CardResponse cardResponse = new CardResponse();
+        Map param = new HashMap();
+        Map result = new HashMap();
+        Map map = new HashMap();
+        nmg_user_info nmg_user_info = nmg_user_infoMapper.getUserInfoByPhone(phone);
+        param.put("city",nmg_user_info.getCityCode());
+        map.put("meal",nmg_meal_infoMapper.applyCardMeal(param));
+        result.put("meal",map);
+        map = new HashMap();
+        map.put("discount",nmg_discount_infoMapper.applyCardDisc(param));
+        result.put("discount",map);
+        param = new HashMap();
+        param.put("orderId",orderId);
+        List<Map<String,Object>> orderCount = nmg_order_infoMapper.getCountById(param);
+        result.put("count",orderCount);
         return cardResponse;
     }
 }

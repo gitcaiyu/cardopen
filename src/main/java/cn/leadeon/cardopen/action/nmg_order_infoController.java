@@ -49,6 +49,17 @@ public class nmg_order_infoController {
         return nmg_order_infoService.detail(data);
     }
 
+    /**
+     * 工单列表点击修改展示详细信息
+     * @param data
+     * @return
+     */
+    @PostMapping(value = "/modify")
+    @CrossOrigin
+    public CardResponse modify(@RequestBody String data) {
+        return nmg_order_infoService.modify(data);
+    }
+
 
     /**
      * 订单明细删除

@@ -49,7 +49,7 @@ public class DateUtil {
      *
      * @return yyyy-MM-dd hh:mm:ss
      */
-    public static String formatFullDateToString(Date date) {
+    public static String formatFullDateToString() {
         simpleDateFormat.get().applyPattern("yyyy-MM-dd HH:mm:ss");
         String strDate = simpleDateFormat.get().format(new Date());
         return strDate;
