@@ -165,7 +165,28 @@ public class nmg_order_infoService {
                 param.put("state", state);
             }
             Map result = new HashMap();
-            result.put("detail",nmg_order_infoMapper.detail(param));
+            List<Map<String,Object>> detail = nmg_order_infoMapper.queryCountByPhone(param);
+            List<Map<String,Object>> results = new ArrayList<>();
+            for (int i = 0; i < detail.size(); i++) {
+                Map r = new HashMap();
+                Map dMap = detail.get(i);
+                param.put("orderId", dMap.get("number"));
+                List<Map<String, Object>> d = nmg_order_infoMapper.detail(param);
+                for (int j = 0; j < d.size(); j++) {
+                    Map dm = d.get(j);
+                    Map arr = new HashMap();
+                    arr.put("meal_name", dm.get("meal_name"));
+                    arr.put("meal_code", dm.get("meal_code"));
+                    arr.put("discount_name", dm.get("discount_name"));
+                    arr.put("amount", dm.get("amount"));
+                    arr.put("applyTime", dm.get("applyTime"));
+                    r.put("number", dm.get("number"));
+                    r.put("status", dm.get("status"));
+                    r.put(j, arr);
+                }
+                results.add(r);
+            }
+            result.put("detail",results);
             cardResponse.setRspBody(result);
         } else {
             cardResponse.setRetCode(CodeEnum.nullValue.getCode());
@@ -190,8 +211,9 @@ public class nmg_order_infoService {
     @Transactional
     public CardResponse orderStateUpdate(String data) {
         CardResponse cardResponse = new CardResponse();
-        String orderId = JSONObject.parseObject(data).getString("orderId");
-        String orderState = JSONObject.parseObject(data).getString("orderState");
+        JSONObject jsonObject = JSONObject.parseObject(data).getJSONObject("reqBody");
+        String orderId = jsonObject.getString("orderId");
+        String orderState = jsonObject.getString("orderState");
         if (orderId != "" || orderState != "") {
             Map param = new HashMap();
             param.put("orderId",orderId);

@@ -14,6 +14,8 @@ public interface nmg_order_infoMapper {
 
     List<Map<String,Object>> getCountById(Map param);
 
+    List<Map<String,Object>> queryCountByPhone(Map param);
+
     int updateOrderInfo(nmg_order_info record);
 
     int orderInfoDel(String batchId);
