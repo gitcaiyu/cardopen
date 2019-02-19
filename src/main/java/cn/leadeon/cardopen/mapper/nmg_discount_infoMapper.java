@@ -12,7 +12,8 @@ public interface nmg_discount_infoMapper {
 
     /**
      * 获取所有优惠列表
+     *
      * @return
      */
-    List<Map<String,String>> applyCardDisc(Map param);
+    List<Map<String, String>> applyCardDisc(Map param);
 }

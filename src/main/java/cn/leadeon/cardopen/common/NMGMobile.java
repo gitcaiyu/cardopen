@@ -12,6 +12,7 @@ public class NMGMobile {
 
     /**
      * 校验当前手机号码是否是内蒙移动手机号
+     *
      * @param phone
      * @return
      */

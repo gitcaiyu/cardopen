@@ -59,22 +59,22 @@ public class nmg_order_infoService {
             Map result = new HashMap();
             Map map = new HashMap();
             nmg_user_info nmg_user_info = nmg_user_infoMapper.getUserInfoByPhone(phone);
-            param.put("city",nmg_user_info.getCityCode());
-            map.put("meal",nmg_meal_infoMapper.applyCardMeal(param));
-            result.put("meal",map);
+            param.put("city", nmg_user_info.getCityCode());
+            map.put("meal", nmg_meal_infoMapper.applyCardMeal(param));
+            result.put("meal", map);
             map = new HashMap();
-            map.put("discount",nmg_discount_infoMapper.applyCardDisc(param));
-            result.put("discount",map);
+            map.put("discount", nmg_discount_infoMapper.applyCardDisc(param));
+            result.put("discount", map);
             map = new HashMap();
             //userType=1：盟市管理员，userType=2：普通社渠人员
             if (nmg_user_info.getUserType().equals("1")) {
-                map.put("city",nmg_user_info.getCityCode());
+                map.put("city", nmg_user_info.getCityCode());
                 map.put("channel", nmg_channel_infoMapper.myChannelInfo(map));
             } else {
-                param.put("chargeTel",phone);
+                param.put("chargeTel", phone);
                 map.put("channel", nmg_channel_infoMapper.myChannelInfo(param));
             }
-            result.put("channelBase",map);
+            result.put("channelBase", map);
             cardResponse.setRspBody(result);
             cardResponse.setRetCode(CodeEnum.success.getCode());
             cardResponse.setRetDesc(CodeEnum.success.getDesc());
@@ -91,8 +91,8 @@ public class nmg_order_infoService {
         CardResponse cardResponse = new CardResponse();
         List orderResult = (List) reqBody.get("orderResult");
         Map param = new HashMap();
-        param.put("cityName",reqBody.get("city"));
-        param.put("countyName",reqBody.get("country"));
+        param.put("cityName", reqBody.get("city"));
+        param.put("countyName", reqBody.get("country"));
         if (orderResult.size() != 0) {
             try {
                 String city = nmg_city_infoMapper.cityInfo(param).getCityCode();
@@ -117,10 +117,6 @@ public class nmg_order_infoService {
                         nmg_order_info.setOrderPhone(reqBody.get("phone").toString());
                         nmg_order_info.setOrderPeople(reqBody.get("name").toString());
                         nmg_order_infoMapper.insert(nmg_order_info);
-                    } else {
-                        nmg_order_info.setUpdateTime(DateUtil.getDateString());
-                        nmg_order_info.setUpdatePeople(map.get("orderOtherPhone").toString());
-                        nmg_order_infoMapper.updateOrderInfo(nmg_order_info);
                     }
                 }
             } catch (Exception e) {
@@ -165,13 +161,14 @@ public class nmg_order_infoService {
                 param.put("state", state);
             }
             Map result = new HashMap();
-            List<Map<String,Object>> detail = nmg_order_infoMapper.queryCountByPhone(param);
-            List<Map<String,Object>> results = new ArrayList<>();
+            List<Map<String, Object>> detail = nmg_order_infoMapper.queryCountByPhone(param);
+            List<Map<String, Object>> results = new ArrayList<>();
             for (int i = 0; i < detail.size(); i++) {
                 Map r = new HashMap();
                 Map dMap = detail.get(i);
                 param.put("orderId", dMap.get("number"));
                 List<Map<String, Object>> d = nmg_order_infoMapper.detail(param);
+                List arrList = new ArrayList();
                 for (int j = 0; j < d.size(); j++) {
                     Map dm = d.get(j);
                     Map arr = new HashMap();
@@ -180,13 +177,14 @@ public class nmg_order_infoService {
                     arr.put("discount_name", dm.get("discount_name"));
                     arr.put("amount", dm.get("amount"));
                     arr.put("applyTime", dm.get("applyTime"));
+                    arrList.add(arr);
                     r.put("number", dm.get("number"));
                     r.put("status", dm.get("status"));
-                    r.put(j, arr);
+                    r.put("arr", arrList);
                 }
                 results.add(r);
             }
-            result.put("detail",results);
+            result.put("detail", results);
             cardResponse.setRspBody(result);
         } else {
             cardResponse.setRetCode(CodeEnum.nullValue.getCode());
@@ -216,8 +214,8 @@ public class nmg_order_infoService {
         String orderState = jsonObject.getString("orderState");
         if (orderId != "" || orderState != "") {
             Map param = new HashMap();
-            param.put("orderId",orderId);
-            param.put("orderState",orderState);
+            param.put("orderId", orderId);
+            param.put("orderState", orderState);
             nmg_order_infoMapper.orderStateUpdate(param);
         } else {
             cardResponse.setRetCode(CodeEnum.nullValue.getCode());
@@ -233,7 +231,7 @@ public class nmg_order_infoService {
         String orderId = JSONObject.parseObject(data).getString("orderId");
         try {
             HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
-            HSSFSheet sheet= hssfWorkbook.createSheet("工单信息");
+            HSSFSheet sheet = hssfWorkbook.createSheet("工单信息");
             HSSFRow row = sheet.createRow(0);
             HSSFCell cell = row.createCell(0);
             cell.setCellValue("工单编号");
@@ -247,14 +245,14 @@ public class nmg_order_infoService {
             cell.setCellValue("选购号码");
             cell = row.createCell(5);
             cell.setCellValue("SIM卡号");
-            List<Map<String,Object>> result = nmg_order_infoMapper.exportOrder(orderId);
+            List<Map<String, Object>> result = nmg_order_infoMapper.exportOrder(orderId);
             for (int i = 0; i < result.size(); i++) {
                 Map maps = result.get(i);
-                row = sheet.createRow(i+1);
+                row = sheet.createRow(i + 1);
                 if (maps.get("order_id") != null) {
                     row.createCell(0).setCellValue((String) maps.get("order_id"));
                     if (i == 0) {
-                        fileName = fileName + maps.get("order_id").toString()+".xls";
+                        fileName = fileName + maps.get("order_id").toString() + ".xls";
                     }
                 }
                 if (maps.get("meal_name") != null) {
@@ -286,23 +284,55 @@ public class nmg_order_infoService {
     }
 
     public CardResponse modify(String data) {
+        JSONObject jsonObject = JSONObject.parseObject(data).getJSONObject("reqBody");
         String phone = JSONObject.parseObject(data).getString("phone");
-        String orderId = JSONObject.parseObject(data).getString("orderId");
+        String orderId = jsonObject.getString("orderId");
         CardResponse cardResponse = new CardResponse();
         Map param = new HashMap();
         Map result = new HashMap();
         Map map = new HashMap();
         nmg_user_info nmg_user_info = nmg_user_infoMapper.getUserInfoByPhone(phone);
-        param.put("city",nmg_user_info.getCityCode());
-        map.put("meal",nmg_meal_infoMapper.applyCardMeal(param));
-        result.put("meal",map);
+        param.put("city", nmg_user_info.getCityCode());
+        map.put("meal", nmg_meal_infoMapper.applyCardMeal(param));
+        result.put("meal", map);
         map = new HashMap();
-        map.put("discount",nmg_discount_infoMapper.applyCardDisc(param));
-        result.put("discount",map);
+        map.put("discount", nmg_discount_infoMapper.applyCardDisc(param));
+        result.put("discount", map);
         param = new HashMap();
-        param.put("orderId",orderId);
-        List<Map<String,Object>> orderCount = nmg_order_infoMapper.getCountById(param);
-        result.put("count",orderCount);
+        param.put("orderId", orderId);
+        List<Map<String, Object>> orderCount = nmg_order_infoMapper.getCountById(param);
+        if (orderCount.size() > 0) {
+            result.put("orderOtherPhone", orderCount.get(0).get("order_other_phone"));
+            result.put("orderOtherPeople", orderCount.get(0).get("order_other_people"));
+            result.put("orderAddress", orderCount.get(0).get("order_addressee"));
+            result.put("flag", orderCount.get(0).get("flag"));
+            result.put("count", orderCount);
+            cardResponse.setRspBody(result);
+        }
+        return cardResponse;
+    }
+
+    @Transactional
+    public CardResponse updateOrderInfo(Map data) {
+        CardResponse cardResponse = new CardResponse();
+        JSONArray jsonArray = JSONArray.parseArray(data.get("reqBody").toString());
+        for (int i = 0; i < jsonArray.size(); i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            String orderId = jsonObject.getString("orderId");
+            String orderMeal = jsonObject.getString("orderMeal");
+            String orderDiscount = jsonObject.getString("orderDiscount");
+            String orderCount = jsonObject.getString("orderCount");
+            String orderOtherPeople = jsonObject.getString("orderOtherPeople");
+            String orderOtherPhone = jsonObject.getString("orderOtherPhone");
+            nmg_order_info nmg_order_info = new nmg_order_info();
+            nmg_order_info.setOrderId(orderId);
+            nmg_order_info.setOrderMeal(orderMeal);
+            nmg_order_info.setOrderDiscount(orderDiscount);
+            nmg_order_info.setOrderCount(orderCount);
+            nmg_order_info.setOrderOtherPeople(orderOtherPeople);
+            nmg_order_info.setOrderOtherPhone(orderOtherPhone);
+            nmg_order_infoMapper.updateOrderInfo(nmg_order_info);
+        }
         return cardResponse;
     }
 }

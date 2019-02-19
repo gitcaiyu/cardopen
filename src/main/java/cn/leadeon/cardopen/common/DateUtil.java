@@ -44,7 +44,6 @@ public class DateUtil {
     }
 
     /**
-     *
      * 将日期转换成格式为yyyy-MM-dd hh:mm:ss的日期字符串
      *
      * @return yyyy-MM-dd hh:mm:ss

@@ -10,11 +10,11 @@ public interface nmg_order_infoMapper {
 
     int insertSelective(nmg_order_info record);
 
-    List<Map<String,Object>> detail(Map param);
+    List<Map<String, Object>> detail(Map param);
 
-    List<Map<String,Object>> getCountById(Map param);
+    List<Map<String, Object>> getCountById(Map param);
 
-    List<Map<String,Object>> queryCountByPhone(Map param);
+    List<Map<String, Object>> queryCountByPhone(Map param);
 
     int updateOrderInfo(nmg_order_info record);
 
@@ -22,5 +22,5 @@ public interface nmg_order_infoMapper {
 
     int orderStateUpdate(Map param);
 
-    List<Map<String,Object>> exportOrder(String orderId);
+    List<Map<String, Object>> exportOrder(String orderId);
 }

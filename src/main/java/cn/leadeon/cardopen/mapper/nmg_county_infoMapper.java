@@ -10,5 +10,5 @@ public interface nmg_county_infoMapper {
 
     int insertSelective(nmg_county_info record);
 
-    List<Map<String,Object>> countyInfo(Map param);
+    List<Map<String, Object>> countyInfo(Map param);
 }

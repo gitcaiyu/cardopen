@@ -10,7 +10,7 @@ public interface nmg_channel_infoMapper {
 
     int insertSelective(nmg_channel_info record);
 
-    List<Map<String,Object>> myChannelInfo(Map param);
+    List<Map<String, Object>> myChannelInfo(Map param);
 
     int channelUpdate(nmg_channel_info nmg_channel_info);
 

@@ -41,7 +41,7 @@ public class nmg_channel_infoService {
     private NMGMobile nmgMobile;
 
     @Transactional
-    public CardResponse myChannelInfo(String data,HttpSession httpSession) {
+    public CardResponse myChannelInfo(String data, HttpSession httpSession) {
         CardResponse cardResponse = new CardResponse();
         String phone = JSONObject.parseObject(data).getString("phone");
         if (nmgMobile.isValid(phone)) {
@@ -49,25 +49,25 @@ public class nmg_channel_infoService {
                 Map result = new HashMap();
                 Map param = new HashMap();
                 nmg_user_info nmg_user_info = nmg_user_infoMapper.getUserInfoByPhone(phone);
-                httpSession.setAttribute("userInfo",nmg_user_info);
+                httpSession.setAttribute("userInfo", nmg_user_info);
                 param.put("city", nmg_user_info.getCityCode());
                 //userType=1：盟市管理员，userType=2：普通社渠人员
                 if (nmg_user_info.getUserRole().equals("1")) {
-                    result.put("channel",nmg_channel_infoMapper.myChannelInfo(param));
+                    result.put("channel", nmg_channel_infoMapper.myChannelInfo(param));
                     cardResponse.setRspBody(result);
                 } else {
                     Map map = new HashMap();
                     map.put("phone", phone);
                     nmg_city_info nmg_city_info = nmg_city_infoMapper.cityInfo(param);
                     map.put("city", nmg_city_info);
-                    result.put("city",map);
+                    result.put("city", map);
                     map = new HashMap();
                     map.put("county", nmg_county_infoMapper.countyInfo(param));
-                    result.put("county",map);
+                    result.put("county", map);
                     map = new HashMap();
                     map.put("chargeTel", nmg_user_info.getUserTel());
                     map.put("channel", nmg_channel_infoMapper.myChannelInfo(map));
-                    result.put("channel",map);
+                    result.put("channel", map);
                     cardResponse.setRspBody(result);
                 }
             } catch (Exception e) {

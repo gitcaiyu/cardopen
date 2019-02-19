@@ -19,10 +19,11 @@ public class nmg_order_infoController {
 
     /**
      * 申请开卡页面初始化
+     *
      * @param data
      * @return
      */
-    @RequestMapping(value = "/applyCard",method = RequestMethod.POST)
+    @RequestMapping(value = "/applyCard", method = RequestMethod.POST)
     @CrossOrigin
     public CardResponse applyCard(@RequestBody String data) {
         return nmg_order_infoService.applyCard(data);
@@ -30,9 +31,10 @@ public class nmg_order_infoController {
 
     /**
      * 订单提交
+     *
      * @return
      */
-    @RequestMapping(value = "/submission",method = RequestMethod.POST)
+    @RequestMapping(value = "/submission", method = RequestMethod.POST)
     @CrossOrigin
     public CardResponse submission(@RequestBody Map map) {
         return nmg_order_infoService.submission(map);
@@ -40,10 +42,11 @@ public class nmg_order_infoController {
 
     /**
      * 查询申请记录
+     *
      * @param data
      * @return
      */
-    @RequestMapping(value = "/detail",method = RequestMethod.POST)
+    @RequestMapping(value = "/detail", method = RequestMethod.POST)
     @CrossOrigin
     public CardResponse detail(@RequestBody String data) {
         return nmg_order_infoService.detail(data);
@@ -51,6 +54,7 @@ public class nmg_order_infoController {
 
     /**
      * 工单列表点击修改展示详细信息
+     *
      * @param data
      * @return
      */
@@ -60,13 +64,26 @@ public class nmg_order_infoController {
         return nmg_order_infoService.modify(data);
     }
 
-
     /**
-     * 订单明细删除
+     * 修改工单信息
+     *
      * @param data
      * @return
      */
-    @RequestMapping(value = "/orderInfoDel",method = RequestMethod.POST)
+    @PostMapping(value = "/updateOrderInfo")
+    @CrossOrigin
+    public CardResponse updateOrderInfo(@RequestBody Map data) {
+        return nmg_order_infoService.updateOrderInfo(data);
+    }
+
+
+    /**
+     * 订单明细删除
+     *
+     * @param data
+     * @return
+     */
+    @RequestMapping(value = "/orderInfoDel", method = RequestMethod.POST)
     @CrossOrigin
     public CardResponse orderInfoDel(@RequestBody String data) {
         return nmg_order_infoService.orderInfoDel(data);
@@ -74,10 +91,11 @@ public class nmg_order_infoController {
 
     /**
      * 订单状态更新
+     *
      * @param data
      * @return
      */
-    @RequestMapping(value = "/orderStateUpdate",method = RequestMethod.POST)
+    @RequestMapping(value = "/orderStateUpdate", method = RequestMethod.POST)
     @CrossOrigin
     public CardResponse orderStateUpdate(@RequestBody String data) {
         return nmg_order_infoService.orderStateUpdate(data);
@@ -85,10 +103,11 @@ public class nmg_order_infoController {
 
     /**
      * 订单信息导出
+     *
      * @param data
      * @return
      */
-    @RequestMapping(value = "/orderExport",method = RequestMethod.POST)
+    @RequestMapping(value = "/orderExport", method = RequestMethod.POST)
     @CrossOrigin
     public CardResponse orderExport(@RequestBody String data) {
         return nmg_order_infoService.orderExport(data);
