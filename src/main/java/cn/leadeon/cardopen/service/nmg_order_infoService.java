@@ -316,14 +316,14 @@ public class nmg_order_infoService {
     public CardResponse updateOrderInfo(Map data) {
         CardResponse cardResponse = new CardResponse();
         JSONArray jsonArray = JSONArray.parseArray(data.get("reqBody").toString());
+        String orderId = data.get("orderId").toString();
+        String orderOtherPeople = data.get("orderOtherPeople").toString();
+        String orderOtherPhone = data.get("orderOtherPhone").toString();
         for (int i = 0; i < jsonArray.size(); i++) {
             JSONObject jsonObject = jsonArray.getJSONObject(i);
-            String orderId = jsonObject.getString("orderId");
             String orderMeal = jsonObject.getString("orderMeal");
             String orderDiscount = jsonObject.getString("orderDiscount");
             String orderCount = jsonObject.getString("orderCount");
-            String orderOtherPeople = jsonObject.getString("orderOtherPeople");
-            String orderOtherPhone = jsonObject.getString("orderOtherPhone");
             nmg_order_info nmg_order_info = new nmg_order_info();
             nmg_order_info.setOrderId(orderId);
             nmg_order_info.setOrderMeal(orderMeal);
