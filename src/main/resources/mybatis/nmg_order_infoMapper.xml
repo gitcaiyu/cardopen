@@ -168,6 +168,7 @@
     <select id="detail" parameterType="java.util.Map" resultType="java.util.Map">
         SELECT
         noi.order_id as number,
+        noi.batch_id,
         nmi.meal_name,
         nmi.meal_code,
         ndi.discount_name,
@@ -300,13 +301,15 @@
       nmg_order_info
     set
       order_meal = #{orderMeal,jdbcType=VARCHAR},
-      order_tariff = (select meal_name from nmg_meal_info where meal_code = #{orderMeal,jdbcType=VARCHAR} )
+      order_tariff = (select meal_name from nmg_meal_info where meal_code = #{orderMeal,jdbcType=VARCHAR} ),
       order_discount = #{orderDiscount,jdbcType=VARCHAR},
       order_count = #{orderCount,jdbcType=VARCHAR},
       update_time = #{updateTime,jdbcType=VARCHAR},
       update_people = #{updatePeople,jdbcType=VARCHAR}
     where
       order_id = #{orderId,jdbcType=VARCHAR}
+      and
+      batch_id = #{batchId,jdbcType=VARCHAR}
   </update>
 
     <delete id="orderInfoDel" parameterType="java.lang.String">
@@ -325,6 +328,7 @@
       order_other_phone,
       order_other_people,
       order_addressee,
+      batch_id,
     CASE
           WHEN order_phone = order_other_phone THEN
           '1' ELSE '2'

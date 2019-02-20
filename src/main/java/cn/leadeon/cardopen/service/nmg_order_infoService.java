@@ -8,6 +8,7 @@ import cn.leadeon.cardopen.common.resBody.CardResponse;
 import cn.leadeon.cardopen.entity.nmg_order_info;
 import cn.leadeon.cardopen.entity.nmg_user_info;
 import cn.leadeon.cardopen.mapper.*;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -24,7 +25,7 @@ import java.util.*;
 import java.util.stream.Stream;
 
 @Service
-public class nmg_order_infoService {
+public class    nmg_order_infoService {
 
     @Autowired
     private nmg_discount_infoMapper nmg_discount_infoMapper;
@@ -177,6 +178,7 @@ public class nmg_order_infoService {
                     arr.put("discount_name", dm.get("discount_name"));
                     arr.put("amount", dm.get("amount"));
                     arr.put("applyTime", dm.get("applyTime"));
+                    arr.put("batchId",dm.get("batch_id"));
                     arrList.add(arr);
                     r.put("number", dm.get("number"));
                     r.put("status", dm.get("status"));
@@ -196,7 +198,8 @@ public class nmg_order_infoService {
     @Transactional
     public CardResponse orderInfoDel(String data) {
         CardResponse cardResponse = new CardResponse();
-        String batchId = JSONObject.parseObject(data).getString("batchId");
+        JSONObject jsonObject = JSONObject.parseObject(data).getJSONObject("reqBody");
+        String batchId = jsonObject.getString("batchId");
         if (batchId != null) {
             nmg_order_infoMapper.orderInfoDel(batchId);
         } else {
@@ -313,17 +316,20 @@ public class nmg_order_infoService {
     }
 
     @Transactional
-    public CardResponse updateOrderInfo(Map data) {
+    public CardResponse updateOrderInfo(JSONObject data) {
         CardResponse cardResponse = new CardResponse();
-        JSONArray jsonArray = JSONArray.parseArray(data.get("reqBody").toString());
-        String orderId = data.get("orderId").toString();
-        String orderOtherPeople = data.get("orderOtherPeople").toString();
-        String orderOtherPhone = data.get("orderOtherPhone").toString();
+        JSONObject jsonObject = data.getJSONObject("reqBody");
+        String phone = data.getString("phone");
+        String orderId = jsonObject.get("orderId").toString();
+        String orderOtherPeople = jsonObject.get("orderOtherPeople").toString();
+        String orderOtherPhone = jsonObject.get("orderOtherPhone").toString();
+        JSONArray jsonArray = jsonObject.getJSONArray("orderResult");
         for (int i = 0; i < jsonArray.size(); i++) {
-            JSONObject jsonObject = jsonArray.getJSONObject(i);
-            String orderMeal = jsonObject.getString("orderMeal");
-            String orderDiscount = jsonObject.getString("orderDiscount");
-            String orderCount = jsonObject.getString("orderCount");
+            JSONObject obj = jsonArray.getJSONObject(i);
+            String orderMeal = obj.getString("orderMeal");
+            String orderDiscount = obj.getString("orderDiscount");
+            String orderCount = obj.getString("orderCount");
+            String batchId = obj.getString("batchId");
             nmg_order_info nmg_order_info = new nmg_order_info();
             nmg_order_info.setOrderId(orderId);
             nmg_order_info.setOrderMeal(orderMeal);
@@ -331,6 +337,9 @@ public class nmg_order_infoService {
             nmg_order_info.setOrderCount(orderCount);
             nmg_order_info.setOrderOtherPeople(orderOtherPeople);
             nmg_order_info.setOrderOtherPhone(orderOtherPhone);
+            nmg_order_info.setUpdateTime(DateUtil.formatFullDateToString());
+            nmg_order_info.setUpdatePeople(phone);
+            nmg_order_info.setBatchId(batchId);
             nmg_order_infoMapper.updateOrderInfo(nmg_order_info);
         }
         return cardResponse;

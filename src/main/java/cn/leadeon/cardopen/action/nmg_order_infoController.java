@@ -72,7 +72,7 @@ public class nmg_order_infoController {
      */
     @PostMapping(value = "/updateOrderInfo")
     @CrossOrigin
-    public CardResponse updateOrderInfo(@RequestBody Map data) {
+    public CardResponse updateOrderInfo(@RequestBody JSONObject data) {
         return nmg_order_infoService.updateOrderInfo(data);
     }
 
