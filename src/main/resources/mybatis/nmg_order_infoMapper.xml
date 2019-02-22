@@ -187,7 +187,7 @@
         WHERE
         1 = 1
         <if test="phone != null">
-            and order_other_phone = #{phone,jdbcType=VARCHAR}
+            and order_phone = #{phone,jdbcType=VARCHAR}
         </if>
         <if test="people != null">
             and order_other_people = #{people,jdbcType=VARCHAR}
@@ -234,7 +234,7 @@
         nmg_order_info noi
         where 1=1
         <if test="phone != null">
-            and order_other_phone = #{phone,jdbcType=VARCHAR}
+            and order_phone = #{phone,jdbcType=VARCHAR}
         </if>
         <if test="people != null">
             and order_other_people = #{people,jdbcType=VARCHAR}
@@ -305,7 +305,9 @@
       order_discount = #{orderDiscount,jdbcType=VARCHAR},
       order_count = #{orderCount,jdbcType=VARCHAR},
       update_time = #{updateTime,jdbcType=VARCHAR},
-      update_people = #{updatePeople,jdbcType=VARCHAR}
+      update_people = #{updatePeople,jdbcType=VARCHAR},
+      order_other_people = #{orderOtherPeople,jdbcType=VARCHAR},
+      order_other_phone = #{orderOtherPhone,jdbcType=VARCHAR}
     where
       order_id = #{orderId,jdbcType=VARCHAR}
       and

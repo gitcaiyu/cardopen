@@ -3,12 +3,10 @@ package cn.leadeon.cardopen.service;
 import cn.leadeon.cardopen.common.CodeEnum;
 import cn.leadeon.cardopen.common.DateUtil;
 import cn.leadeon.cardopen.common.RandomUtil;
-import cn.leadeon.cardopen.common.reqBody.OrderSubmission;
 import cn.leadeon.cardopen.common.resBody.CardResponse;
 import cn.leadeon.cardopen.entity.nmg_order_info;
 import cn.leadeon.cardopen.entity.nmg_user_info;
 import cn.leadeon.cardopen.mapper.*;
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -22,7 +20,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.FileOutputStream;
 import java.util.*;
-import java.util.stream.Stream;
 
 @Service
 public class    nmg_order_infoService {
@@ -320,9 +317,9 @@ public class    nmg_order_infoService {
         CardResponse cardResponse = new CardResponse();
         JSONObject jsonObject = data.getJSONObject("reqBody");
         String phone = data.getString("phone");
-        String orderId = jsonObject.get("orderId").toString();
-        String orderOtherPeople = jsonObject.get("orderOtherPeople").toString();
-        String orderOtherPhone = jsonObject.get("orderOtherPhone").toString();
+        String orderId = jsonObject.getString("orderId");
+        String orderOtherPeople = jsonObject.getString("orderOtherPeople");
+        String orderOtherPhone = jsonObject.getString("orderOtherPhone");
         JSONArray jsonArray = jsonObject.getJSONArray("orderResult");
         for (int i = 0; i < jsonArray.size(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);

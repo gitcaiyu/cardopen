@@ -1,14 +1,11 @@
 package cn.leadeon.cardopen.action;
 
-import cn.leadeon.cardopen.common.reqBody.OrderSubmission;
 import cn.leadeon.cardopen.common.resBody.CardResponse;
 import cn.leadeon.cardopen.service.nmg_order_infoService;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 import java.util.Map;
 
 @RestController
@@ -58,7 +55,7 @@ public class nmg_order_infoController {
      * @param data
      * @return
      */
-    @PostMapping(value = "/modify")
+    @RequestMapping(value = "/modify")
     @CrossOrigin
     public CardResponse modify(@RequestBody String data) {
         return nmg_order_infoService.modify(data);
