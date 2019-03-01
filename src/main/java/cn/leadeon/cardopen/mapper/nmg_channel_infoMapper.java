@@ -12,6 +12,8 @@ public interface nmg_channel_infoMapper {
 
     List<Map<String, Object>> myChannelInfo(Map param);
 
+    Map<String,Object> getChannelInfoById(Map param);
+
     int channelUpdate(nmg_channel_info nmg_channel_info);
 
     int channelDel(String channelId);

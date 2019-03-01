@@ -240,16 +240,10 @@
             and order_other_people = #{people,jdbcType=VARCHAR}
         </if>
         <if test="city != null">
-            and city.city_code = #{city,jdbcType=VARCHAR}
+            and city = #{city,jdbcType=VARCHAR}
         </if>
         <if test="county != null">
             and noi.county = #{county,jdbcType=VARCHAR}
-        </if>
-        <if test="meal != null">
-            and nmi.meal_code = #{meal,jdbcType=VARCHAR}
-        </if>
-        <if test="discount != null">
-            and ndi.discount_id = #{discount,jdbcType=VARCHAR}
         </if>
         <if test="tariff != null">
             and noi.order_tariff = #{tariff,jdbcType=VARCHAR}
@@ -275,25 +269,27 @@
         group by noi.order_id
     </select>
 
-    <select id="exportOrder" parameterType="java.lang.String" resultType="java.util.Map">
-    SELECT
-        noi.order_id,
+    <select id="exportOrder" parameterType="java.util.Map" resultType="java.util.Map">
+        SELECT DISTINCT
+        nod.order_id,
+        nod.detail_id,
         nmi.meal_name,
-        nmi.meal_code,
+        nod.order_meal AS meal_code,
         ndi.discount_name,
+        nod.order_discount,
         nod.cardNum,
-        nod.SIMNum
-    FROM
+        nod.SIMNum,
+        noi.sub_time,
+        noi.create_time
+        FROM
         nmg_order_detail nod
-        LEFT JOIN nmg_order_info noi ON nod.order_id = noi.order_id
-        AND nod.batch_id = noi.batch_id
-        LEFT JOIN nmg_meal_info nmi ON nmi.meal_id = noi.order_meal
-        LEFT JOIN nmg_discount_info ndi ON ndi.discount_id = noi.order_discount
-    WHERE
-        noi.order_id = #{orderId,jdbcType=VARCHAR}
-    ORDER BY
-        noi.order_phone,
-        noi.order_meal
+        LEFT JOIN nmg_order_info noi ON noi.order_id = nod.order_id
+        LEFT JOIN nmg_meal_info nmi ON nmi.meal_code = nod.order_meal
+        LEFT JOIN nmg_discount_info ndi ON ndi.discount_id = nod.order_discount
+        WHERE 1=1
+        <if test="orderId != null">
+            and noi.order_id = #{orderId,jdbcType=VARCHAR}
+        </if>
   </select>
 
     <update id="updateOrderInfo" parameterType="cn.leadeon.cardopen.entity.nmg_order_info">
@@ -324,19 +320,24 @@
 
     <select id="getCountById" parameterType="java.util.Map" resultType="java.util.Map">
     SELECT
-      order_count,
-      order_meal,
-      order_discount,
-      order_other_phone,
-      order_other_people,
-      order_addressee,
-      batch_id,
+        order_count,
+        order_meal,
+        ndi.discount_name AS order_discount,
+        ndi.discount_id,
+        order_other_phone,
+        order_other_people,
+        order_addressee,
+        batch_id,
+        nci.channel_name,
+        nci.channel_address,
     CASE
-          WHEN order_phone = order_other_phone THEN
-          '1' ELSE '2'
-      END flag
+            WHEN order_phone = order_other_phone THEN
+            '1' ELSE '2'
+        END flag
     FROM
-	  nmg_order_info
+        nmg_order_info noi
+        INNER JOIN nmg_channel_info nci ON nci.channel_id = noi.channel_id
+        INNER JOIN nmg_discount_info ndi ON ndi.discount_id = noi.order_discount
 	where order_id = #{orderId}
   </select>
 

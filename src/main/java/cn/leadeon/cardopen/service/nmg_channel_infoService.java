@@ -44,6 +44,7 @@ public class nmg_channel_infoService {
     public CardResponse myChannelInfo(String data, HttpSession httpSession) {
         CardResponse cardResponse = new CardResponse();
         String phone = JSONObject.parseObject(data).getString("phone");
+        JSONObject jsonObject = JSONObject.parseObject(data).getJSONObject("reqBody");
         if (nmgMobile.isValid(phone)) {
             try {
                 Map result = new HashMap();
@@ -51,10 +52,19 @@ public class nmg_channel_infoService {
                 nmg_user_info nmg_user_info = nmg_user_infoMapper.getUserInfoByPhone(phone);
                 httpSession.setAttribute("userInfo", nmg_user_info);
                 param.put("city", nmg_user_info.getCityCode());
+                if (null != jsonObject) {
+                    if (jsonObject.getString("chargeName") != null && !jsonObject.getString("chargeName").equals("")) {
+                        param.put("chargeName", jsonObject.getString("chargeName"));
+                    }
+                    if (jsonObject.getString("chargeTel") != null && !jsonObject.getString("chargeTel").equals("")) {
+                        param.put("chargeTel", jsonObject.getString("chargeTel"));
+                    }
+                }
+                List<Map<String, Object>> myChannelInfo = new ArrayList<>();
                 //userType=1：盟市管理员，userType=2：普通社渠人员
                 if (nmg_user_info.getUserRole().equals("1")) {
-                    result.put("channel", nmg_channel_infoMapper.myChannelInfo(param));
-                    cardResponse.setRspBody(result);
+                    myChannelInfo = nmg_channel_infoMapper.myChannelInfo(param);
+                    result.put("channel", myChannelInfo);
                 } else {
                     Map map = new HashMap();
                     map.put("phone", phone);
@@ -66,10 +76,16 @@ public class nmg_channel_infoService {
                     result.put("county", map);
                     map = new HashMap();
                     map.put("chargeTel", nmg_user_info.getUserTel());
-                    map.put("channel", nmg_channel_infoMapper.myChannelInfo(map));
+                    myChannelInfo = nmg_channel_infoMapper.myChannelInfo(param);
+                    map.put("channel", myChannelInfo);
                     result.put("channel", map);
-                    cardResponse.setRspBody(result);
                 }
+                if (myChannelInfo.size() > 1) {
+                    result.put("flag","2");
+                } else {
+                    result.put("flag","1");
+                }
+                cardResponse.setRspBody(result);
             } catch (Exception e) {
                 cardResponse.setRetCode(CodeEnum.failed.getCode());
                 cardResponse.setRetDesc(CodeEnum.failed.getDesc());
@@ -82,9 +98,18 @@ public class nmg_channel_infoService {
     }
 
     @Transactional
-    public CardResponse channelUpdate(nmg_channel_info nmg_channel_info) {
+    public CardResponse channelUpdate(JSONObject data) {
         CardResponse cardResponse = new CardResponse();
         try {
+            JSONObject reqBody = data.getJSONObject("reqBody");
+            nmg_channel_info nmg_channel_info = new nmg_channel_info();
+            nmg_channel_info.setChannelId(reqBody.getString("channelId"));
+            nmg_channel_info.setChannelName(reqBody.getString("channel_name"));
+            nmg_channel_info.setChannelAddress(reqBody.getString("channel_address"));
+            nmg_channel_info.setChargeName(reqBody.getString("charge_name"));
+            nmg_channel_info.setChargeTel(reqBody.getString("charge_tel"));
+            nmg_channel_info.setCity(reqBody.getString("city_code"));
+            nmg_channel_info.setCounty(reqBody.getString("county_id"));
             nmg_channel_infoMapper.channelUpdate(nmg_channel_info);
         } catch (Exception e) {
             cardResponse.setRetCode(CodeEnum.failed.getCode());
@@ -94,9 +119,9 @@ public class nmg_channel_infoService {
     }
 
     @Transactional
-    public CardResponse channelDel(String data) {
+    public CardResponse channelDel(JSONObject data) {
         CardResponse cardResponse = new CardResponse();
-        String channelId = JSONObject.parseObject(data).getString("channelId");
+        String channelId = data.getJSONObject("reqBody").getString("channelId");
         if (channelId != null || !channelId.trim().equals("")) {
             try {
                 nmg_channel_infoMapper.channelDel(channelId);
@@ -108,6 +133,24 @@ public class nmg_channel_infoService {
             cardResponse.setRetCode(CodeEnum.nullValue.getCode());
             cardResponse.setRetDesc(CodeEnum.nullValue.getDesc());
         }
+        return cardResponse;
+    }
+
+    public CardResponse getChannelInfoById(JSONObject data) {
+        CardResponse cardResponse = new CardResponse();
+        Map result = new HashMap();
+        Map param = new HashMap();
+        Map map = new HashMap();
+        nmg_user_info nmg_user_info = nmg_user_infoMapper.getUserInfoByPhone(data.getString("phone"));
+        param.put("city", nmg_user_info.getCityCode());
+        map.put("city", nmg_city_infoMapper.cityInfo(param));
+        result.put("city", map);
+        map = new HashMap();
+        map.put("county", nmg_county_infoMapper.countyInfo(param));
+        result.put("county", map);
+        param.put("channelId", data.getJSONObject("reqBody").getString("channelId"));
+        result.put("channel", nmg_channel_infoMapper.getChannelInfoById(param));
+        cardResponse.setRspBody(result);
         return cardResponse;
     }
 

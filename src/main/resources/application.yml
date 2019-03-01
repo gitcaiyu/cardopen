@@ -15,4 +15,5 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 file:
-  path: /home/leadeon/下载/
+  path: /media/leadeon/TOSHIBA/development/workspace/cardopen/out/production/resources/static/
+  readPath: http://192.168.0.109:8001/cardopen/

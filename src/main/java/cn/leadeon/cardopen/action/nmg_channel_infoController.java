@@ -3,7 +3,9 @@ package cn.leadeon.cardopen.action;
 import cn.leadeon.cardopen.common.resBody.CardResponse;
 import cn.leadeon.cardopen.entity.nmg_channel_info;
 import cn.leadeon.cardopen.service.nmg_channel_infoService;
+import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
+import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,13 +33,13 @@ public class nmg_channel_infoController {
     /**
      * 盟市负责人修改社渠人员信息
      *
-     * @param nmg_channel_info
+     * @param data
      * @return
      */
     @RequestMapping(value = "/channelUpdate", method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse channelUpdate(@RequestBody nmg_channel_info nmg_channel_info) {
-        return nmg_channel_infoService.channelUpdate(nmg_channel_info);
+    public CardResponse channelUpdate(@RequestBody JSONObject data) {
+        return nmg_channel_infoService.channelUpdate(data);
     }
 
     /**
@@ -48,9 +50,18 @@ public class nmg_channel_infoController {
      */
     @RequestMapping(value = "/channelDel", method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse channelDel(@RequestBody String data) {
+    public CardResponse channelDel(@RequestBody JSONObject data) {
         return nmg_channel_infoService.channelDel(data);
     }
+
+    /**
+     * 点击修改后显示需要修改的信息
+     * @param data
+     * @return
+     */
+    @RequestMapping(value = "/getChannelInfoById",method = RequestMethod.POST)
+    @CrossOrigin
+    public CardResponse getChannelInfoById(@RequestBody JSONObject data) { return nmg_channel_infoService.getChannelInfoById(data); }
 
 
 }

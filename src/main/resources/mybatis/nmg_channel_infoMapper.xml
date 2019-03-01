@@ -127,6 +127,25 @@
         </if>
     </select>
 
+    <select id="getChannelInfoById" resultType="java.util.Map" parameterType="java.util.Map">
+        SELECT
+        channel_id,
+        channel_name,
+        city.city_name,
+        county.county_name,
+        charge_name,
+        charge_tel,
+        channel_address
+        FROM
+        nmg_channel_info channel
+        INNER JOIN nmg_city_info city ON channel.city = city.city_code
+        INNER JOIN nmg_county_info county ON channel.county = county.county_id
+        where 1 = 1
+        <if test="channelId != null">
+            and channel_id = #{channelId,jdbcType=VARCHAR}
+        </if>
+    </select>
+
     <delete id="channelDel" parameterType="java.lang.String">
     delete from nmg_channel_info where channel_id = #{channelId,jdbcType=VARCHAR}
   </delete>

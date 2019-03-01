@@ -6,6 +6,8 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.Map;
 
 @RestController
@@ -106,8 +108,8 @@ public class nmg_order_infoController {
      */
     @RequestMapping(value = "/orderExport", method = RequestMethod.POST)
     @CrossOrigin
-    public CardResponse orderExport(@RequestBody String data) {
-        return nmg_order_infoService.orderExport(data);
+    public CardResponse orderExport(@RequestBody String data, HttpServletRequest httpServletRequest) throws IOException {
+        return nmg_order_infoService.orderExport(data,httpServletRequest);
     }
 
 }

@@ -22,5 +22,5 @@ public interface nmg_order_infoMapper {
 
     int orderStateUpdate(Map param);
 
-    List<Map<String, Object>> exportOrder(String orderId);
+    List<Map<String, Object>> exportOrder(Map map);
 }

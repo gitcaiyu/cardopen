@@ -18,7 +18,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.*;
 
 @Service
@@ -48,6 +51,9 @@ public class    nmg_order_infoService {
     @Value("${file.path}")
     private String path;
 
+    @Value("${file.readPath}")
+    private String readFilePath;
+
     @Transactional
     public CardResponse applyCard(String data) {
         CardResponse cardResponse = new CardResponse();
@@ -57,25 +63,30 @@ public class    nmg_order_infoService {
             Map result = new HashMap();
             Map map = new HashMap();
             nmg_user_info nmg_user_info = nmg_user_infoMapper.getUserInfoByPhone(phone);
-            param.put("city", nmg_user_info.getCityCode());
-            map.put("meal", nmg_meal_infoMapper.applyCardMeal(param));
-            result.put("meal", map);
-            map = new HashMap();
-            map.put("discount", nmg_discount_infoMapper.applyCardDisc(param));
-            result.put("discount", map);
-            map = new HashMap();
-            //userType=1：盟市管理员，userType=2：普通社渠人员
-            if (nmg_user_info.getUserType().equals("1")) {
-                map.put("city", nmg_user_info.getCityCode());
-                map.put("channel", nmg_channel_infoMapper.myChannelInfo(map));
+            if (nmg_user_info != null) {
+                param.put("city", nmg_user_info.getCityCode());
+                map.put("meal", nmg_meal_infoMapper.applyCardMeal(param));
+                result.put("meal", map);
+                map = new HashMap();
+                map.put("discount", nmg_discount_infoMapper.applyCardDisc(param));
+                result.put("discount", map);
+                map = new HashMap();
+                //userType=1：盟市管理员，userType=2：普通社渠人员
+                if (nmg_user_info.getUserRole().equals("1")) {
+                    map.put("city", nmg_user_info.getCityCode());
+                    map.put("channel", nmg_channel_infoMapper.myChannelInfo(map));
+                } else {
+                    param.put("chargeTel", phone);
+                    map.put("channel", nmg_channel_infoMapper.myChannelInfo(param));
+                }
+                result.put("channelBase", map);
+                cardResponse.setRspBody(result);
+                cardResponse.setRetCode(CodeEnum.success.getCode());
+                cardResponse.setRetDesc(CodeEnum.success.getDesc());
             } else {
-                param.put("chargeTel", phone);
-                map.put("channel", nmg_channel_infoMapper.myChannelInfo(param));
+                cardResponse.setRetCode(CodeEnum.loginFaild.getCode());
+                cardResponse.setRetDesc(CodeEnum.loginFaild.getDesc());
             }
-            result.put("channelBase", map);
-            cardResponse.setRspBody(result);
-            cardResponse.setRetCode(CodeEnum.success.getCode());
-            cardResponse.setRetDesc(CodeEnum.success.getDesc());
         } catch (Exception e) {
             cardResponse.setRetCode(CodeEnum.failed.getCode());
             cardResponse.setRetDesc(CodeEnum.failed.getDesc());
@@ -140,20 +151,23 @@ public class    nmg_order_infoService {
         String state = jsonObject.getString("state");
         if (phone != null) {
             Map param = new HashMap();
-            if (!phone.equals("")) {
+            nmg_user_info nmg_user_info = nmg_user_infoMapper.getUserInfoByPhone(phone);
+            if (nmg_user_info.getUserRole().equals("2")) {
+                param.put("city",nmg_user_info.getCityCode());
+            } else {
                 param.put("phone", phone);
             }
             if (!subTime.equals("")) {
-                param.put("subTime", subTime);
+                param.put("subtime", subTime);
             }
             if (!subTImeE.equals("")) {
                 param.put("subtimeE", subTImeE);
             }
             if (!createTime.equals("")) {
-                param.put("createTime", createTime);
+                param.put("createtime", createTime);
             }
             if (!createTimeE.equals("")) {
-                param.put("createTimeE", createTimeE);
+                param.put("createtimeE", createTimeE);
             }
             if (!state.equals("")) {
                 param.put("state", state);
@@ -225,10 +239,15 @@ public class    nmg_order_infoService {
     }
 
     @Transactional
-    public CardResponse orderExport(String data) {
+    public CardResponse orderExport(String data, HttpServletRequest httpServletRequest) throws IOException {
         CardResponse cardResponse = new CardResponse();
         String fileName = path;
-        String orderId = JSONObject.parseObject(data).getString("orderId");
+        File file1 = new File(fileName);
+        if (!file1.exists()) {
+            file1.mkdir();
+        }
+        String file = "";
+        String orderId = JSONObject.parseObject(data).getJSONObject("reqBody").getString("orderId");
         try {
             HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
             HSSFSheet sheet = hssfWorkbook.createSheet("工单信息");
@@ -245,7 +264,9 @@ public class    nmg_order_infoService {
             cell.setCellValue("选购号码");
             cell = row.createCell(5);
             cell.setCellValue("SIM卡号");
-            List<Map<String, Object>> result = nmg_order_infoMapper.exportOrder(orderId);
+            Map param = new HashMap();
+            param.put("orderId",orderId);
+            List<Map<String, Object>> result = nmg_order_infoMapper.exportOrder(param);
             for (int i = 0; i < result.size(); i++) {
                 Map maps = result.get(i);
                 row = sheet.createRow(i + 1);
@@ -253,6 +274,7 @@ public class    nmg_order_infoService {
                     row.createCell(0).setCellValue((String) maps.get("order_id"));
                     if (i == 0) {
                         fileName = fileName + maps.get("order_id").toString() + ".xls";
+                        file = maps.get("order_id").toString() + ".xls";
                     }
                 }
                 if (maps.get("meal_name") != null) {
@@ -271,11 +293,13 @@ public class    nmg_order_infoService {
                     row.createCell(5).setCellValue((String) maps.get("SIMNum"));
                 }
             }
+
             FileOutputStream fileOutputStream = new FileOutputStream(fileName);
             hssfWorkbook.write(fileOutputStream);
             fileOutputStream.close();
             hssfWorkbook.close();
-            cardResponse.setRetDesc(fileName);
+            String readPath = readFilePath + file;
+            cardResponse.setRetDesc(readPath);
         } catch (Exception e) {
             cardResponse.setRetCode(CodeEnum.failed.getCode());
             cardResponse.setRetDesc(CodeEnum.failed.getDesc());
@@ -305,6 +329,8 @@ public class    nmg_order_infoService {
             result.put("orderOtherPhone", orderCount.get(0).get("order_other_phone"));
             result.put("orderOtherPeople", orderCount.get(0).get("order_other_people"));
             result.put("orderAddress", orderCount.get(0).get("order_addressee"));
+            result.put("channelName",orderCount.get(0).get("channel_name"));
+            result.put("channelAddress",orderCount.get(0).get("channel_address"));
             result.put("flag", orderCount.get(0).get("flag"));
             result.put("count", orderCount);
             cardResponse.setRspBody(result);
