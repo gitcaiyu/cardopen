@@ -76,6 +76,7 @@ public class nmg_channel_infoService {
                     result.put("county", map);
                     map = new HashMap();
                     map.put("chargeTel", nmg_user_info.getUserTel());
+                    param.put("chargeTel",phone);
                     myChannelInfo = nmg_channel_infoMapper.myChannelInfo(param);
                     map.put("channel", myChannelInfo);
                     result.put("channel", map);
