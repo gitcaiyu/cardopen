@@ -91,7 +91,9 @@
         '社会渠道' ELSE '自营渠道'
         END channel_type,
         city.city_name,
+        city.city_code,
         county.county_name,
+        county.county_id,
         charge_name,
         charge_tel,
         channel_address,
@@ -121,9 +123,6 @@
         </if>
         <if test="chargeName != null">
             and charge_name = #{chargeName,jdbcType=VARCHAR}
-        </if>
-        <if test="chargeTel != null">
-            and charge_tel = #{chargeTel,jdbcType=VARCHAR}
         </if>
     </select>
 

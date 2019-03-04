@@ -25,7 +25,7 @@ import java.io.IOException;
 import java.util.*;
 
 @Service
-public class    nmg_order_infoService {
+public class nmg_order_infoService {
 
     @Autowired
     private nmg_discount_infoMapper nmg_discount_infoMapper;
@@ -71,18 +71,26 @@ public class    nmg_order_infoService {
                 map.put("discount", nmg_discount_infoMapper.applyCardDisc(param));
                 result.put("discount", map);
                 map = new HashMap();
+                List<Map<String, Object>> myChannelInfo = new ArrayList<>();
                 //userType=1：盟市管理员，userType=2：普通社渠人员
-                if (nmg_user_info.getUserRole().equals("1")) {
-                    map.put("city", nmg_user_info.getCityCode());
-                    map.put("channel", nmg_channel_infoMapper.myChannelInfo(map));
+//                if (nmg_user_info.getUserRole().equals("1")) {
+//                    map.put("city", nmg_user_info.getCityCode());
+//                    myChannelInfo = nmg_channel_infoMapper.myChannelInfo(param);
+//                    map.put("channel", myChannelInfo);
+//                } else {
+                param.put("chargeTel", phone);
+                myChannelInfo = nmg_channel_infoMapper.myChannelInfo(param);
+                map.put("channel", myChannelInfo);
+//                }
+                if (myChannelInfo.size() > 0) {
+                    result.put("channelBase", map);
+                    cardResponse.setRspBody(result);
+                    cardResponse.setRetCode(CodeEnum.success.getCode());
+                    cardResponse.setRetDesc(CodeEnum.success.getDesc());
                 } else {
-                    param.put("chargeTel", phone);
-                    map.put("channel", nmg_channel_infoMapper.myChannelInfo(param));
+                    cardResponse.setRetCode(CodeEnum.notinchannel.getCode());
+                    cardResponse.setRetDesc(CodeEnum.notinchannel.getDesc());
                 }
-                result.put("channelBase", map);
-                cardResponse.setRspBody(result);
-                cardResponse.setRetCode(CodeEnum.success.getCode());
-                cardResponse.setRetDesc(CodeEnum.success.getDesc());
             } else {
                 cardResponse.setRetCode(CodeEnum.loginFaild.getCode());
                 cardResponse.setRetDesc(CodeEnum.loginFaild.getDesc());
@@ -152,7 +160,7 @@ public class    nmg_order_infoService {
         if (phone != null) {
             Map param = new HashMap();
             nmg_user_info nmg_user_info = nmg_user_infoMapper.getUserInfoByPhone(phone);
-            if (nmg_user_info.getUserRole().equals("2")) {
+            if (nmg_user_info.getUserRole().equals("3")) {
                 param.put("city",nmg_user_info.getCityCode());
             } else {
                 param.put("phone", phone);
@@ -293,7 +301,6 @@ public class    nmg_order_infoService {
                     row.createCell(5).setCellValue((String) maps.get("SIMNum"));
                 }
             }
-
             FileOutputStream fileOutputStream = new FileOutputStream(fileName);
             hssfWorkbook.write(fileOutputStream);
             fileOutputStream.close();
@@ -349,10 +356,10 @@ public class    nmg_order_infoService {
         JSONArray jsonArray = jsonObject.getJSONArray("orderResult");
         for (int i = 0; i < jsonArray.size(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
+            String batchId = obj.getString("batchId");
             String orderMeal = obj.getString("orderMeal");
             String orderDiscount = obj.getString("orderDiscount");
             String orderCount = obj.getString("orderCount");
-            String batchId = obj.getString("batchId");
             nmg_order_info nmg_order_info = new nmg_order_info();
             nmg_order_info.setOrderId(orderId);
             nmg_order_info.setOrderMeal(orderMeal);
@@ -360,10 +367,23 @@ public class    nmg_order_infoService {
             nmg_order_info.setOrderCount(orderCount);
             nmg_order_info.setOrderOtherPeople(orderOtherPeople);
             nmg_order_info.setOrderOtherPhone(orderOtherPhone);
-            nmg_order_info.setUpdateTime(DateUtil.formatFullDateToString());
-            nmg_order_info.setUpdatePeople(phone);
-            nmg_order_info.setBatchId(batchId);
-            nmg_order_infoMapper.updateOrderInfo(nmg_order_info);
+            if (null != batchId) {
+                nmg_order_info.setUpdateTime(DateUtil.formatFullDateToString());
+                nmg_order_info.setUpdatePeople(phone);
+                nmg_order_info.setBatchId(batchId);
+                nmg_order_infoMapper.updateOrderInfo(nmg_order_info);
+            } else {
+                Map param = new HashMap();
+                param.put("chargeTel",phone);
+                List<Map<String, Object>> myChannelInfo = nmg_channel_infoMapper.myChannelInfo(param);
+                Map channel = myChannelInfo.get(0);
+                nmg_order_info.setChannelId(channel.get("channel_id").toString());
+                nmg_order_info.setChannelName(channel.get("channel_name").toString());
+                nmg_order_info.setCity(channel.get("city_code").toString());
+                nmg_order_info.setCounty(channel.get("county_id").toString());
+                nmg_order_info.setSubTime(DateUtil.formatFullDateToString());
+                nmg_order_infoMapper.insert(nmg_order_info);
+            }
         }
         return cardResponse;
     }

@@ -61,8 +61,8 @@ public class nmg_channel_infoService {
                     }
                 }
                 List<Map<String, Object>> myChannelInfo = new ArrayList<>();
-                //userType=1：盟市管理员，userType=2：普通社渠人员
-                if (nmg_user_info.getUserRole().equals("1")) {
+                //userType=3：盟市管理员，userType=2：社渠人员
+                if (nmg_user_info.getUserRole().equals("3")) {
                     myChannelInfo = nmg_channel_infoMapper.myChannelInfo(param);
                     result.put("channel", myChannelInfo);
                 } else {
@@ -82,8 +82,11 @@ public class nmg_channel_infoService {
                 }
                 if (myChannelInfo.size() > 1) {
                     result.put("flag","2");
-                } else {
+                } else if (myChannelInfo.size() == 1) {
                     result.put("flag","1");
+                } else {
+                    cardResponse.setRetCode(CodeEnum.notinchannel.getCode());
+                    cardResponse.setRetDesc(CodeEnum.notinchannel.getDesc());
                 }
                 cardResponse.setRspBody(result);
             } catch (Exception e) {

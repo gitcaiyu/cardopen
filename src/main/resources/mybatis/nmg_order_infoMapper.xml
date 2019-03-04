@@ -290,6 +290,7 @@
         <if test="orderId != null">
             and noi.order_id = #{orderId,jdbcType=VARCHAR}
         </if>
+        group by detail_id
   </select>
 
     <update id="updateOrderInfo" parameterType="cn.leadeon.cardopen.entity.nmg_order_info">
